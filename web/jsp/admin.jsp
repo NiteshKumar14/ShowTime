@@ -29,7 +29,7 @@
         %>
         <c:if test="${id != null}">
             <p>Welcome, ${name}</p>
-        <form name="Admin" action="logout" method="POST">
+        <form name="Admin" action="../logout" method="POST">
             <input type="submit" value="Logout" >
         </form>
         <form name="Tickets" action="manageTickets.jsp" method="POST">
