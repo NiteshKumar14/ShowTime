@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+		<title>Movie</title>
+		<meta charset="utf-8">
+		<meta name="fragment" content="!">
+    <link rel="stylesheet" href="b2style.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   </head>
+    <body>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top ">
+    <a class="navbar-brand a brand" href="index.html">ShowTime</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+              <a class="nav-link a" href="b2.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                  <a class="nav-link a" href="notes.html">Movies <span class="sr-only">(current)</span></a>
+             </li>
+                  <li class="nav-item active">
+                          <a class="nav-link a" href="#"> About Us<span class="sr-only">(current)</span></a>
+                  </li>
+                  <div class="a">
+                        <button type="button" class="btn  btn-outline-primary">Sign In</button>
+
+                 </div>
+          </ul>
+
+
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+
+  <button type="button" class="btn btn-outline-light btn-lg btn-block"></button>
+
+
+  <div class="container">
+    <div class="jumbotron">
+
+
+		<div style="margin: 0 auto; max-width: 630px">
+			<script type="text/javascript" src="index.php?controller=pjFrontEnd&amp;action=pjActionLoad&amp;cid=1&amp;theme=theme1&amp;layout=2&amp;switch=1&amp;multi=0"></script><div class="container-fluid"><br><div id="pjWrapperTSBCalendar_1"><div class="panel panel-primary">
+	<div class="panel-heading">
+		Selected timeslots	</div>
+				<div class="panel-body">
+				<ul class="tooltip-view-table">
+					<li>
+						<div class="col-size-2"><strong>Date</strong></div>
+						<div class="col-size-1"><strong>Start time</strong></div>
+						<div class="col-size-1"><strong>End time</strong></div>
+													<div class="col-size-3"><strong>Price</strong></div>
+												</li>
+													<li>
+									<div class="col-size-2"><span>20/10/2019</span></div>
+									<div class="col-size-1"><span>09:00</span></div>
+									<div class="col-size-1"><span>10:00</span></div>
+									<div class="col-size-3">
+																					<strong>150.00</strong>
+
+									</div>
+								</li>
+												</ul>
+			</div>
+			</div>
+
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			Summary		</div>
+
+		<div class="panel-body">
+			<div class="pj-calendar-booking-summary">
+				<ul>
+					<li>
+						<span>Price</span>
+
+						<strong>150.00</strong>
+					</li>
+
+					<li>
+						<span>Tax (10%)</span>
+
+						<strong>10.00</strong>
+					</li>
+
+					<li>
+						<span>Total price</span>
+
+						<strong>160.00</strong>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+		<div class="panel panel-primary">
+		<div class="panel-heading">
+			Booking Form		</div>
+
+		<form action="" method="post" class="pjTsSelectorCheckoutForm" novalidate="novalidate">
+			<input type="hidden" name="ts_checkout" value="1">
+			<div class="panel-body">
+				<div class="pj-calendar-form">
+											<div class="row">
+							<label class="col-sm-4 control-label">Name<span class="tsAsterisk">*</span></label>
+
+							<div class="col-sm-8">
+								<input type="text" name="customer_name" class="form-control required" value="" data-msg-required="Name is required">
+								<div class="help-block with-errors"><ul class="list-unstyled"></ul></div>
+							</div>
+						</div>
+												<div class="row">
+							<label class="col-sm-4 control-label">Email<span class="tsAsterisk">*</span></label>
+
+							<div class="col-sm-8">
+								<input type="text" name="customer_email" class="form-control email required" value="" data-msg-required="Email is required" data-msg-email="Email is invalid">
+								<div class="help-block with-errors"><ul class="list-unstyled"></ul></div>
+							</div>
+						</div>
+												<div class="row">
+							<label class="col-sm-4 control-label">Phone<span class="tsAsterisk">*</span></label>
+
+							<div class="col-sm-8">
+								<input type="text" name="customer_phone" class="form-control required" value="" data-msg-required="Phone is required">
+								<div class="help-block with-errors"><ul class="list-unstyled"></ul></div>
+							</div>
+						</div>
+												<div class="row">
+							<label class="col-sm-4 control-label">City</label>
+
+
+							<div class="col-sm-8">
+								<input type="text" name="customer_city" class="form-control" value="" data-msg-required="City is required">
+								<div class="help-block with-errors"><ul class="list-unstyled"></ul></div>
+							</div>
+						</div>
+												<div class="row">
+							<label class="col-sm-4 control-label">Address Line 1</label>
+
+							<div class="col-sm-8">
+								<input type="text" name="customer_address_1" class="form-control" value="" data-msg-required="Address 1 is required">
+								<div class="help-block with-errors"><ul class="list-unstyled"></ul></div>
+							</div><!-- /.col-sm-8 -->
+						</div><!-- /.row -->
+												<div class="row">
+							<label class="col-sm-4 control-label">Zip</label><!-- /.col-sm-4 -->
+
+							<div class="col-sm-8">
+								<input type="text" name="customer_zip" class="form-control" value="" data-msg-required="Zip is required">
+								<div class="help-block with-errors"><ul class="list-unstyled"></ul></div>
+							</div><!-- /.col-sm-8 -->
+						</div><!-- /.row -->
+												<div class="row">
+							<label class="col-sm-4 control-label">Notes</label><!-- /.col-sm-4 -->
+
+							<div class="col-sm-8">
+								<textarea name="customer_notes" cols="30" rows="10" class="form-control" data-msg-required="Notes is required"></textarea>
+								<div class="help-block with-errors"><ul class="list-unstyled"></ul></div>
+							</div><!-- /.col-sm-8 -->
+						</div><!-- /.row -->
+												<div class="row">
+							<label class="col-sm-4 control-label">Payment method<span class="tsAsterisk">*</span></label>
+							<div class="col-sm-8">
+								<select name="payment_method" class="form-control required" data-msg-required="Payment method is required">
+									<option value="">-- Select Payment method --</option>
+								<option value="bank">Bank account</option><option value="cash">Cash</option><option value="creditcard">Credit card/Debit Card</option><option value="paypal">Paypal</option>								</select>
+								<div class="help-block with-errors"><ul class="list-unstyled"></ul></div>
+							</div>
+						</div>
+						<div class="row pjTsSelectorBank" style="display: none">
+							<label class="col-sm-4 control-label">Bank account</label>
+							<div class="col-sm-8"><span class="text-muted">Bank of India</span></div>
+						</div>
+						<div class="row pjTsSelectorCCard" style="display: none">
+							<label class="col-sm-4 control-label">CC Type<span class="tsAsterisk">*</span></label>
+							<div class="col-sm-8">
+								<select name="cc_type" class="form-control required" data-msg-required="CC Type is required">
+									<option value="">---</option>
+									<option value="amex">AmericanExpress</option><option value="maestro">Maestro</option><option value="mastercard">MasterCard</option><option value="visa">Visa</option>								</select>
+								<div class="help-block with-errors"><ul class="list-unstyled"></ul></div>
+							</div>
+						</div>
+						<div class="row pjTsSelectorCCard" style="display: none">
+							<label class="col-sm-4 control-label">CC Number<span class="tsAsterisk">*</span></label>
+							<div class="col-sm-8">
+								<input type="text" name="cc_num" class="form-control required" value="" data-msg-required="CC Number is required">
+								<div class="help-block with-errors"><ul class="list-unstyled"></ul></div>
+							</div>
+						</div>
+						<div class="row pjTsSelectorCCard" style="display: none">
+							<label class="col-sm-4 control-label">CC Code<span class="tsAsterisk">*</span></label>
+							<div class="col-sm-8">
+								<input type="text" name="cc_code" class="form-control required" value="" data-msg-required="CC Code is required">
+								<div class="help-block with-errors"><ul class="list-unstyled"></ul></div>
+							</div>
+						</div>
+						<div class="row pjTsSelectorCCard" style="display: none">
+							<label class="col-sm-4 control-label">CC Exp.date<span class="tsAsterisk">*</span></label>
+							<div class="col-sm-8">
+								<div class="row">
+									<div class="col-sm-6">
+									<select name="cc_exp_month" id="cc_exp_month" class="form-control required"><option value="01">Jan</option><option value="02">Feb</option><option value="03">Mar</option><option value="04">Apr</option><option value="05">May</option><option value="06">Jun</option><option value="07">Jul</option><option value="08">Aug</option><option value="09">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select>									</div>
+									<div class="col-sm-6">
+									<select name="cc_exp_year" id="cc_exp_year" class="form-control required"><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option><option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option><option value="2025">2025</option><option value="2026">2026</option><option value="2027">2027</option><option value="2028">2028</option><option value="2029">2029</option><option value="2030">2030</option></select>									</div>
+								</div>
+							</div>
+						</div>
+												<div class="row">
+							<label for="" class="col-sm-4 control-label">
+								Captcha<span class="asterisk">*</span>							</label>
+							<div class="col-sm-8">
+								<div class="row">
+									<div class="col-lg-6 col-md-6 col-sm-6 col-sx-12">
+										<input type="text" name="captcha" class="form-control required" maxlength="6" autocomplete="off" data-msg-required="Capcha is required" data-msg-remote="Capcha is wrong">
+									</div>
+
+								</div>
+								<div class="help-block with-errors"><ul class="list-unstyled"></ul></div>
+							</div>
+						</div>
+													<div class="row">
+								<label class="col-sm-4 control-label">&nbsp;</label>
+								<div class="col-sm-8">
+									<div style="display: block; overflow: hidden;">
+										<span style="float: left; width: 15px">
+											<input type="checkbox" name="terms" id="terms_1" value="1" class=" required" style="margin: 0" data-msg-required="Terms is required">
+										</span>
+										<span for="terms_1" style="float: left; width: 85%">I agree with <a href="http://www.google.com/" class="tsServiceLink" target="_blank">terms and conditions</a></span>
+									</div>
+									<div class="help-block with-errors"><ul class="list-unstyled"></ul></div>
+								</div>
+							</div>
+											</div>
+			</div>
+
+			<div class="panel-footer">
+				<button type="submit" class="btn btn-primary pull-right">Continue</button>
+			</div><!-- /.panel-footer -->
+		</form>
+
+		<div class="modal fade pjTbModal" id="pjTsTermModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  	<div class="modal-dialog" style="z-index: 9999;">
+		    	<div class="modal-content">
+				   
+			      	<div class="modal-footer">
+			        	<button type="button" class="btn btn-default pjTbBtn pjTbBtnPrimary" data-dismiss="modal">Close</button>
+			      	</div>
+		    	</div>
+		  	</div>
+		</div>
+	</div><!-- /.panel -->
+	</div></div>
+		</div>
+    </div>
+    </div>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
