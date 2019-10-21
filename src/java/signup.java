@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -45,9 +46,29 @@ public class signup extends HttpServlet {
         stmt.setString(2,name);
         stmt.setString(3,password);
         stmt.setString(4,"user");
+        
+        PreparedStatement checkUser=con.prepareStatement("select *from user where username=?");
+        checkUser.setString(1,username);
+        ResultSet already=checkUser.executeQuery();
+        if(already.next())
+        {
+            request.setAttribute("exist", "username not available !!");
+            request.getRequestDispatcher("signup.jsp").forward(request, response);
+            
+            
+            
+            
+            
+        }
+        else
+        {
+          
+    
+        
         stmt.executeUpdate();
         request.setAttribute("creation", "Account created Sucessfully");
-        request.getRequestDispatcher("jsp/signin.jsp").forward(request, response);
+        request.getRequestDispatcher("signin.jsp").forward(request, response);
+    }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

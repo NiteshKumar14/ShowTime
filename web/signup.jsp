@@ -1,16 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>Movies</title>
-    <link rel="stylesheet" href="../css/b2style.css">
+    <link rel="stylesheet" href="css/b2style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top ">
-  <a class="navbar-brand a brand" href="../index.jsp">ShowTime</a>
+  <a class="navbar-brand a brand" href="index.jsp">ShowTime</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -18,7 +19,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-            <a class="nav-link a" href="../index.jsp">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link a" href="index.jsp">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
                 <a class="nav-link a" href="booking.jsp">Movies <span class="sr-only">(current)</span></a>
@@ -46,6 +47,9 @@
     <section class="signup extra">
         <!-- <img src="images/signup-bg.jpg" alt=""> -->
         <div class="container">
+              <c:if test="${errorMsg != null}">
+                    <p>${errorMsg}</p>
+                    </c:if>
             <div class="signup-content extra">
                 <form method="POST" id="signup-form" class="signup-form" action="signup">
                     <h2 class="form-title">Create account</h2>

@@ -22,13 +22,13 @@
                         <a class="nav-link a" href="index.jsp">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link a" href="jsp/booking.jsp">Movies <span class="sr-only">(current)</span></a>
+                        <a class="nav-link a" href="booking.jsp">Movies <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link a" href="jsp/aboutUs.jsp"> About Us<span class="sr-only">(current)</span></a>
+                        <a class="nav-link a" href="aboutUs.jsp"> About Us<span class="sr-only">(current)</span></a>
                     </li>
                     <div class="a">
-                        <button type="button" class="btn  btn-outline-primary" onclick="window.location='jsp/signin.jsp';">Sign In</button>
+                        <button type="button" class="btn  btn-outline-primary" onclick="window.location='signin.jsp';">Sign In</button>
 
                     </div>
                 </ul>

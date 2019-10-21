@@ -32,7 +32,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-            <a class="nav-link a" href="../index.jsp">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link a" href="index.jsp">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
                 <a class="nav-link a" href="booking.jsp">Movies <span class="sr-only">(current)</span></a>
@@ -41,7 +41,7 @@
                         <a class="nav-link a" href="aboutUs.jsp"> About Us<span class="sr-only">(current)</span></a>
                 </li>
                 <div class="a">
-                      <form name="logout" action="../logout" method="POST">
+                      <form name="logout" action="logout" method="POST">
             <input type="submit" value="Logout" class="btn  btn-outline-primary" >
                 
         </form>
@@ -66,7 +66,7 @@
   <div class="row">
     <div class="col-sm-6">
       <div class="card">
-        <img src="../images/movie1.jpg" class="card-img-top" alt="...">
+        <img src="images/movie1.jpg" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Special title treatment</h5>
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -76,7 +76,7 @@
     </div>
     <div class="col-sm-6">
       <div class="card">
-        <img src="../images movie3.jpg" class="card-img-top" alt="...">
+        <img src="images/movie3.jpg" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Special title treatment</h5>
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
