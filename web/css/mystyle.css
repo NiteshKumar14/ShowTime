@@ -4,7 +4,7 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-  height: 100vh;
+  height: fit-content;
   background-image: -moz-linear-gradient(to left, #74ebd5, #9face6);
   background-image: -ms-linear-gradient(to left, #74ebd5, #9face6);
   background-image: -o-linear-gradient(to left, #74ebd5, #9face6);
