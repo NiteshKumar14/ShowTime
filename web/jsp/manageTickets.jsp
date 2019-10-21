@@ -15,7 +15,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Ticket List</title>
-        <link rel="stylesheet" href="table.css">
+        <link rel="stylesheet" href="../css/table.css">
     </head>
     <body>
       
@@ -56,12 +56,12 @@
             
                 <td>
             <form action="edit" method="post">
-            <input type="submit" value="edit" class="bttn" id=<%= rs.getString("booking_id") %>>
+            <input type="submit" value="edit" class="bttn" id="<%= rs.getString("booking_id") %>">
             </form>
                 </td>
             <td>
             <form action="cancel" method="post">
-            <input type="submit" value="Cancel"  class="bttn1" id=<%= rs.getString("booking_id") %>>    
+            <input type="submit" value="Cancel"  class="bttn1" id="<%= rs.getString("booking_id") %>">    
             </form>
                 </td>
             </tr>

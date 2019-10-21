@@ -47,7 +47,7 @@ public class signup extends HttpServlet {
         stmt.setString(4,"user");
         stmt.executeUpdate();
         request.setAttribute("creation", "Account created Sucessfully");
-        request.getRequestDispatcher("signin.jsp").forward(request, response);
+        request.getRequestDispatcher("jsp/signin.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

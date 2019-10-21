@@ -38,11 +38,11 @@ public class session extends HttpServlet {
         session.setAttribute("isLogin", "yes");
         if(session.getAttribute("role").equals("admin"))
         {
-            response.sendRedirect("admin.jsp");
+            response.sendRedirect("jsp/admin.jsp");
         }
         else
         {
-            response.sendRedirect("welcome.jsp");
+            response.sendRedirect("jsp/welcome.jsp");
         }
        
     }
