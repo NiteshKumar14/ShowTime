@@ -1,3 +1,8 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Driver"%>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -5,9 +10,11 @@
     <meta charset="utf-8">
     <title>Movies</title>
     <link rel="stylesheet" href="css/b2style.css">
+     <link rel="stylesheet" href="css/card.css">
+     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
+<link rel="stylesheet" type="text/css" href="css/mystyle.css">
     <body>
        
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top ">
@@ -41,34 +48,62 @@
             </div>
         </nav>
 
-        <button type="button" class="btn btn-outline-light btn-lg btn-block"></button>
-        <div class="container">
+<!--        <button type="button" class="btn btn-outline-light btn-lg btn-block"></button>-->
+     
             <c:if test="${requestScope.logged != null}">
                 <p> ${requestScope.logged}</p>
-            <div class="jumbotron">
-                <h1>Movies</h1>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <img src="images/movie1.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Special title treatment</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                <a href="#" class="btn btn-primary">Book</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <img src="images/movie3.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Special title treatment</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                <a href="#" class="btn btn-primary">Book</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <%
+            Driver driver=(Driver)(Class.forName("com.mysql.jdbc.Driver")).newInstance();
+            DriverManager.registerDriver(driver);
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/showtime","root", "");
+            PreparedStatement stmt = con.prepareStatement("select *from movie");
+            ResultSet rs = stmt.executeQuery();
+            while(rs.next())
+            {
+            %>
+                
+             
+      <div class="movie_card" id="bright">
+    <div class="info_section">
+      <div class="movie_header">
+          <img class="locandina" src="<%=rs.getString("movie_primary") %>"/>
+        <h1><%= rs.getString("movie_name") %></h1>
+        <h4><%= rs.getString("movie_directer") %></h4>
+        <span class="minutes"><%= rs.getString("movie_duration") %></span>
+        <p class="type"><%= rs.getString("movie_genre") %></p>
+      </div>
+      <div class="movie_desc">
+        <p class="text">
+          <%= rs.getString("movie_desc") %>
+        </p>
+        <input type="submit" class="fadeIn fourth" value="Book Now">
+      </div>
+
+    </div>
+        <div class="blur_back <%= rs.getString("css")%>" >
+            <style>
+                .<%= rs.getString("css")%> {
+                    background: url("<%= rs.getString("movie_secondary")  %>");
+}
+
+                </style>
+            
+            
+        </div>
+</div>
+       <%
+            }
+        %>            
+       
+  
+       
+                
+                
+                
+                
+                
+                
+                
     </body>
 
 </html>
