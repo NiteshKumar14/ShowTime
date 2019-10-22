@@ -18,6 +18,9 @@
         <link rel="stylesheet" href="css/table.css">
     </head>
     <body>
+          <form name="Admin" action="logout" method="POST">
+            <input type="submit" value="Logout" >
+        </form>
       
                 <div class="container">
         <table >

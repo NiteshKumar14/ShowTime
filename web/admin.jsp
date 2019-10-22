@@ -35,5 +35,8 @@
         <form name="Tickets" action="manageTickets.jsp" method="POST">
             <input type="submit" value="Manage Tickets" >
         </form>
+          <form name="movies" action="manageMovies.jsp" method="POST">
+            <input type="submit" value="Manage Movies" >
+        </form>
     </body>
 </html>
