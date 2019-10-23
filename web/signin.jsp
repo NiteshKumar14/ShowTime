@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="css/mystyle.css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
 </head>
 
 <body>
@@ -65,7 +66,7 @@
         </nav>
 
         <div class="wrapper fadeInDown">
-            <div id="formContent">
+            
                 <!-- Tabs Titles -->
 
                 <!-- Icon -->
@@ -79,10 +80,11 @@
                     <p>${creation}</p>
                     </c:if>
                 <!-- Login Form -->
-                <form action="Signin" method="post">
-                    <input type="text" id="login" class="fadeIn second" name="username" placeholder="login">
-                    <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
-                    <input type="submit" class="fadeIn fourth" value="Log In">
+                <p id="pass" ></p>
+                <form action="Signin" method="post" id="form-signin">
+                    <input type="text" id="login" class="fadeIn second" name="username" placeholder="login" onfocus="changeCol1()" required>
+                    <input type="password" id="password" class="fadeIn third" name="password" placeholder="password" onfocus="changeCol2()" required> 
+                    <input type="submit" class="fadeIn fourth" id="submit1" value="Log In" onclick="checkSignIn(event)" >
                 </form>
 
                 <!-- Remind Passowrd -->
@@ -90,9 +92,9 @@
                     <a class="underlineHover" href="signup.jsp">Don't have an Account create one</a>
                 </div>
 
-            </div>
+            
         </div>
 
 </body>
-
+<script defer src="js/signInCheck.js"> </script>
 </html>
