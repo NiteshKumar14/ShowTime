@@ -11,8 +11,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/mystyle.css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
+   
+      <script defer  src="js/signInCheck.js"></script>
 </head>
 
 <body>
@@ -58,15 +58,12 @@
                 </ul>
 
 
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
+               
             </div>
         </nav>
 
         <div class="wrapper fadeInDown">
-            
+            <div id="formContent">
                 <!-- Tabs Titles -->
 
                 <!-- Icon -->
@@ -80,8 +77,7 @@
                     <p>${creation}</p>
                     </c:if>
                 <!-- Login Form -->
-                <p id="pass" ></p>
-                <form action="Signin" method="post" id="form-signin">
+                 <form action="Signin" method="post" id="form-signin">
                     <input type="text" id="login" class="fadeIn second" name="username" placeholder="login" onfocus="changeCol1()" required>
                     <input type="password" id="password" class="fadeIn third" name="password" placeholder="password" onfocus="changeCol2()" required> 
                     <input type="submit" class="fadeIn fourth" id="submit1" value="Log In" onclick="checkSignIn(event)" >
@@ -92,9 +88,9 @@
                     <a class="underlineHover" href="signup.jsp">Don't have an Account create one</a>
                 </div>
 
-            
+            </div>
         </div>
 
 </body>
-<script defer src="js/signInCheck.js"> </script>
+
 </html>
