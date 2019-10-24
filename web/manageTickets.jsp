@@ -21,12 +21,12 @@
           <form name="Admin" action="logout" method="POST">
             <input type="submit" value="Logout" >
         </form>
-      
+    
                 <div class="container">
         <table >
             <thead>
             <tr>
-                <th ">Booking Id</th>
+                <th >Booking Id</th>
                 <th >User Name</th>
                 <th >Movie Name</th>
                 <th >Theatre Name</th>
@@ -39,6 +39,7 @@
                 
             </tr>
             </thead>
+        </table>
         <%
             Driver driver=(Driver)(Class.forName("com.mysql.jdbc.Driver")).newInstance();
             DriverManager.registerDriver(driver);
@@ -48,8 +49,11 @@
             while(rs.next())
             {
             %>
+            <form action="cancel" method="post">
+            <table>
             <tr>
-                <td><%=rs.getString("booking_id")%></td>
+                <td  ><%=rs.getString("booking_id")%></td>
+            <input type="hidden" value="<%=rs.getString("booking_id")%>" name="booking_id">
                 <td><%=rs.getString("username")%></td> 
                 <td><%=rs.getString("movie_name")%></td>
                 <td><%=rs.getString("theatre_name")%></td>
@@ -58,25 +62,22 @@
                 <td><%=rs.getString("ticket_price")%></td>
             
                 <td>
-            <form action="edit" method="post">
-            <input type="submit" value="edit" class="bttn" id="<%= rs.getString("booking_id") %>">
-            </form>
+           
+            <input type="submit" value="edit" class="bttn" >
+        
                 </td>
             <td>
-            <form action="cancel" method="post">
-            <input type="submit" value="Cancel"  class="bttn1" id="<%= rs.getString("booking_id") %>">    
-            </form>
+           
+            <input type="submit" value="Cancel"  class="bttn1" >    
+            
                 </td>
             </tr>
-            <%
+            </table>
+            </form>
+                <%
               }  
             %>
-</table>
                      </div>
-            </div>
-        </div>
-    </div>
-        
         
         
         
