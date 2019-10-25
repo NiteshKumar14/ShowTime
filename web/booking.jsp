@@ -72,10 +72,10 @@
             DriverManager.registerDriver(driver);
             Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/showtime","root", "");
             PreparedStatement stmt = con.prepareStatement("select *from movie");
-            int i=0;
+       
             ResultSet rs = stmt.executeQuery();
-            while(rs.next()&&i<4)
-            {i++;
+            while(rs.next())
+            {
             %>
             <form action="bookMovie.jsp" method="post">    
              

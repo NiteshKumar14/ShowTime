@@ -59,8 +59,8 @@ public class insertMovie extends HttpServlet {
         
        stmt.executeUpdate();
         
-        out.print("inserted ");
-      response.sendRedirect("manageMovies.jsp");
+     
+      response.sendRedirect("manageMovies.jsp?msg=success");
        
     }
 
@@ -125,4 +125,3 @@ public class insertMovie extends HttpServlet {
     }// </editor-fold>
 
 }
-

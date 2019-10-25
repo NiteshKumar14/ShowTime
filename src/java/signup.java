@@ -46,15 +46,15 @@ public class signup extends HttpServlet {
         stmt.setString(2,name);
         stmt.setString(3,password);
         stmt.setString(4,"user");
-        
+        PrintWriter out=response.getWriter();
         PreparedStatement checkUser=con.prepareStatement("select *from user where username=?");
         checkUser.setString(1,username);
         ResultSet already=checkUser.executeQuery();
         if(already.next())
         {
-            request.setAttribute("exist", "username not available !!");
-            request.getRequestDispatcher("signup.jsp").forward(request, response);
-            
+           out.println("Username already Exists retry");
+       response.setHeader("refresh","5;url=signup.jsp");    
+           
             
             
             
@@ -62,12 +62,13 @@ public class signup extends HttpServlet {
         }
         else
         {
-          
+        
     
         
         stmt.executeUpdate();
-        request.setAttribute("creation", "Account created Sucessfully");
-        request.getRequestDispatcher("signin.jsp").forward(request, response);
+          out.println("Account created sucessfully");
+       response.setHeader("refresh","5;url=signin.jsp");  
+        
     }
     }
 

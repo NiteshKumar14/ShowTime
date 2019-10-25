@@ -34,10 +34,22 @@
                     <li class="nav-item active">
                         <a class="nav-link a" href="aboutUs.jsp"> About Us<span class="sr-only">(current)</span></a>
                     </li>
-                    <div class="a">
+                    <%
+                        if(session.getAttribute("id") == null)
+                        {
+                    %>
+                     <div class="a">
                         <button type="button" class="btn  btn-outline-primary" onclick="window.location='signin.jsp';">Sign In</button>
 
                     </div>
+                     <% } else
+                     {
+                       response.sendRedirect("welcome.jsp");
+                     }
+                     %>
+                   
+                    
+             
                 </ul>
 
 
@@ -50,8 +62,7 @@
 
 <!--        <button type="button" class="btn btn-outline-light btn-lg btn-block"></button>-->
      
-            <c:if test="${requestScope.logged != null}">
-                <p> ${requestScope.logged}</p>
+          
                 <%
             Driver driver=(Driver)(Class.forName("com.mysql.jdbc.Driver")).newInstance();
             DriverManager.registerDriver(driver);
@@ -62,7 +73,7 @@
             {
             %>
                 
-             
+            
       <div class="movie_card" id="bright">
     <div class="info_section">
       <div class="movie_header">
@@ -76,7 +87,7 @@
         <p class="text">
           <%= rs.getString("movie_desc") %>
         </p>
-        <input type="submit" class="fadeIn fourth" value="Book Now">
+        <input type="submit" class="fadeIn fourth" value="Book Now" <% if(session.getAttribute("id")!=null) {%>onclick="window.location='bookMovie.jsp';"<% } else {%> onclick="window.location='signin.jsp';"<% } %>>
       </div>
 
     </div>
@@ -91,6 +102,7 @@
             
         </div>
 </div>
+
        <%
             }
         %>            

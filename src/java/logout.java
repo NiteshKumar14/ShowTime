@@ -34,8 +34,10 @@ public class logout extends HttpServlet {
         HttpSession session=request.getSession();
         session.removeAttribute("id");
         session.invalidate();
-        request.setAttribute("logged", "logged out successfully");
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+        PrintWriter out=response.getWriter();
+        out.println("logged out sucessfully");
+       response.setHeader("refresh","5;url=index.jsp");
+      
         
     }
 

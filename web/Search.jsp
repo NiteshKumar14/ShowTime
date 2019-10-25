@@ -34,10 +34,20 @@
                     <li class="nav-item active">
                         <a class="nav-link a" href="aboutUs.jsp"> About Us<span class="sr-only">(current)</span></a>
                     </li>
-                    <div class="a">
+                    <%
+                        if(session.getAttribute("id") == null)
+                        {
+                    %>
+                     <div class="a">
                         <button type="button" class="btn  btn-outline-primary" onclick="window.location='signin.jsp';">Sign In</button>
 
                     </div>
+                     <% } else{%>
+                           <div class="a">
+                    
+              <button type="button" class="btn  btn-outline-primary" onclick="window.location='logout';">Log out</button>
+            </div>
+                    <%  }%>
                 </ul>
 
 

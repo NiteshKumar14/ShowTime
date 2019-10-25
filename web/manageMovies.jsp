@@ -20,6 +20,21 @@
          
     </head>
     <body>
+        <%
+            if(request.getAttribute("msg") != null)
+            {
+            %>
+            <p>Insertion was sucessfull</p>
+        <% 
+             response.setHeader("refresh","3:url=manageMovies.jsp");
+        }
+        
+        
+        %>
+        
+        
+        
+        
         <form action="insertMovie" method="post" class="container">
                <input type="submit" value="Insert" >
         <table>    

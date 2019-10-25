@@ -70,12 +70,7 @@
                 <div class="fadeIn first">
                     <i class="large material-icons">account_circle</i>
                 </div>
-                    <c:if test="${errorMsg != null}">
-                    <p>${errorMsg}</p>
-                    </c:if>
-                    <c:if test="${creation != null}">
-                    <p>${creation}</p>
-                    </c:if>
+                   
                 <!-- Login Form -->
                  <form action="Signin" method="post" id="form-signin">
                     <input type="text" id="login" class="fadeIn second" name="username" placeholder="login" onfocus="changeCol1()" required>
