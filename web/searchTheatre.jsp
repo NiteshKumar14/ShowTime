@@ -25,22 +25,23 @@
        Driver driver=(Driver)(Class.forName("com.mysql.jdbc.Driver").newInstance());
        DriverManager.registerDriver(driver);
        String movie_name=request.getParameter("movie_name");
-       String date="2019-10-25";
+     
+       String date="2019-10-27";
        String times;
        int slotc;
        String []slots;
        Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/showtime","root","");
-       PreparedStatement stmt=con.prepareStatement("select *from reserve where movie_name=? and date=?");
+       PreparedStatement stmt=con.prepareStatement("select *from reservation where movie_name=? and date=?");
        stmt.setString(1,movie_name);
        stmt.setString(2,date);
        ResultSet rs=stmt.executeQuery();
-      
+       PreparedStatement ts=con.prepareStatement("select timing from time_slots where slot_id=?");
+       
        while(rs.next())
        {
            
-      times= rs.getString("time_slots");
-      slots=times.split(",");
-      slotc=0;
+      times= rs.getString("slot_id");
+      ts.setString(1,times);
    %>
    
      <div class="panel panel-success">
@@ -50,8 +51,10 @@
          </div>
       <div class="panel-body">
           <form action="bookSeats.jsp" method="post"> 
-      <% for(slotc=0;slotc<slots.length;slotc++){ %>
-       <button type="submit" name="getTime" class="btn btn-outline-dark"><%= slots[slotc]%></button>
+      <% ResultSet rss=ts.executeQuery();         
+      
+         while(rss.next()){ %>
+       <button type="submit" name="getTime" class="btn btn-outline-dark"><%= rss.getString("timing") %></button>
            <% } %>
           </form>
       </div>

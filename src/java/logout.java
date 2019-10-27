@@ -35,8 +35,8 @@ public class logout extends HttpServlet {
         session.removeAttribute("id");
         session.invalidate();
         PrintWriter out=response.getWriter();
-        out.println("logged out sucessfully");
-       response.setHeader("refresh","5;url=index.jsp");
+       
+       response.setHeader("refresh","1;url=index.jsp?l=1");
       
         
     }

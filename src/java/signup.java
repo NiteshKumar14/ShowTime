@@ -52,8 +52,8 @@ public class signup extends HttpServlet {
         ResultSet already=checkUser.executeQuery();
         if(already.next())
         {
-           out.println("Username already Exists retry");
-       response.setHeader("refresh","5;url=signup.jsp");    
+          
+       response.setHeader("refresh","1;url=signup.jsp?t1=1");    
            
             
             

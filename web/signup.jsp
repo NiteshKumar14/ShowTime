@@ -48,12 +48,17 @@
     <section class="signup extra">
         <!-- <img src="images/signup-bg.jpg" alt=""> -->
         <div class="container">
-              <c:if test="${errorMsg != null}">
-                    <p>${errorMsg}</p>
-                    </c:if>
+           
             <div class="signup-content extra">
                 <form method="POST" id="signup-form" class="signup-form" action="signup">
                 <h2 class="form-title">Create account</h2>
+                 <%
+                if(request.getParameter("t1")!=null){
+            %>
+            <script>
+                alert("Username already exists ");
+                </script>
+            <% }%>
                     <div class="form-group">
                         <input type="text" class="form-input" name="name" id="name" placeholder="Your Name" onfocus="changeCol1()" required/>
                     </div>

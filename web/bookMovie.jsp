@@ -115,9 +115,12 @@
  
   </div> <!-- end container -->
 </div> <!-- end movie-card -->
-<input type="hidden" name="bookDate" id="currentDate"  >
-<input type="submit" value="Book Tickets" onclick="<% request.getRequestDispatcher("searchTheatre.jsp").forward(request, response); %>">
-                    
+
+<form action="searchTheatre.jsp" method="post">
+    <input type="hidden" name="bookDate" id="currentDate"  >
+    <input type="hidden" name="movie_name" value="<%= request.getParameter("movie_name") %> "  >
+<input type="submit" value="Book Tickets" >
+</form>                    
                     
                     
                     

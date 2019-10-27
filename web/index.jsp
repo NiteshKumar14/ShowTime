@@ -62,7 +62,13 @@
 
 <!--        <button type="button" class="btn btn-outline-light btn-lg btn-block"></button>-->
      
-          
+               <%
+                if(request.getParameter("l")!=null){
+            %>
+            <script>
+                alert("Logged out successfully ! ");
+                </script>
+            <% }%>
                 <%
             Driver driver=(Driver)(Class.forName("com.mysql.jdbc.Driver")).newInstance();
             DriverManager.registerDriver(driver);
@@ -73,7 +79,7 @@
             {
             %>
                 
-            
+           
       <div class="movie_card" id="bright">
     <div class="info_section">
       <div class="movie_header">
