@@ -9,7 +9,7 @@ $(document).ready(function() {
     var i;
     for (i = 0; i < array1.length; i++) {
         let set = document.getElementById(array1[i].toString());
-
+        set.checked=true;
         set.disabled = true;
 
 
