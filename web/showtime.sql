@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 25, 2019 at 06:51 PM
+-- Generation Time: Oct 31, 2019 at 08:17 AM
 -- Server version: 10.1.38-MariaDB
--- PHP Version: 7.1.28
+-- PHP Version: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -56,25 +56,24 @@ INSERT INTO `movie` (`movie_id`, `movie_name`, `move_price`, `movie_genre`, `mov
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reserve`
+-- Table structure for table `reservation`
 --
 
-CREATE TABLE `reserve` (
-  `theatre_name` varchar(40) NOT NULL,
-  `movie_name` varchar(40) NOT NULL,
-  `screen_id` int(1) NOT NULL,
-  `time_slots` varchar(50) NOT NULL,
-  `seats_booked` varchar(1000) NOT NULL,
-  `date` date NOT NULL
+CREATE TABLE `reservation` (
+  `theatre_name` varchar(30) NOT NULL,
+  `movie_name` varchar(30) NOT NULL,
+  `slot_id` int(4) NOT NULL,
+  `date` date NOT NULL,
+  `screen_id` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `reserve`
+-- Dumping data for table `reservation`
 --
 
-INSERT INTO `reserve` (`theatre_name`, `movie_name`, `screen_id`, `time_slots`, `seats_booked`, `date`) VALUES
-('PVR PACIFIC', 'Bala', 1, '10:15,13:30,16:30', 'A1,A2', '2019-10-25'),
-('PVR VIKASPURI', 'CHICHHCHORE', 3, '8:15,13:30,16:50', 'A1,A2,A3', '2019-10-25');
+INSERT INTO `reservation` (`theatre_name`, `movie_name`, `slot_id`, `date`, `screen_id`) VALUES
+('PVR PACIFIC', 'CHICHHCHORE', 1, '2019-10-31', 2),
+('PVR VIKASPURI', 'CHICHHCHORE', 2, '2019-10-31', 2);
 
 -- --------------------------------------------------------
 
@@ -127,6 +126,27 @@ INSERT INTO `ticket` (`username`, `ticket_id`, `theatre_name`, `movie_name`, `mo
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `time_slots`
+--
+
+CREATE TABLE `time_slots` (
+  `slot_id` int(4) NOT NULL,
+  `timing` varchar(30) NOT NULL,
+  `seat_booked` varchar(5000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `time_slots`
+--
+
+INSERT INTO `time_slots` (`slot_id`, `timing`, `seat_booked`) VALUES
+(1, '10:15', 'A1,A4'),
+(1, '12:50', 'A5,A4'),
+(2, '16:50', 'A5,A4');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -147,6 +167,7 @@ INSERT INTO `user` (`username`, `name`, `password`, `role`) VALUES
 ('Eclipse21', 'Nitesh', 'Random@!1', 'admin'),
 ('Knight@gmail.com', 'Nitesh', 'hellobaby', 'user'),
 ('PixelSpades', 'Colonel Belvile', 'Random@!1', 'user'),
+('ranveer11', 'Ranveer', 'Ranveer@1', 'user'),
 ('tarun@gmail.com', 'Tarun', 'belvile', 'user');
 
 --
@@ -161,10 +182,11 @@ ALTER TABLE `movie`
   ADD UNIQUE KEY `movie_name` (`movie_name`);
 
 --
--- Indexes for table `reserve`
+-- Indexes for table `reservation`
 --
-ALTER TABLE `reserve`
-  ADD PRIMARY KEY (`theatre_name`,`movie_name`,`screen_id`,`time_slots`,`date`),
+ALTER TABLE `reservation`
+  ADD PRIMARY KEY (`slot_id`),
+  ADD KEY `theatre_name` (`theatre_name`),
   ADD KEY `movie_name` (`movie_name`);
 
 --
@@ -185,6 +207,12 @@ ALTER TABLE `ticket`
   ADD KEY `username` (`username`);
 
 --
+-- Indexes for table `time_slots`
+--
+ALTER TABLE `time_slots`
+  ADD KEY `slot_id` (`slot_id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -197,11 +225,11 @@ ALTER TABLE `user`
 --
 
 --
--- Constraints for table `reserve`
+-- Constraints for table `reservation`
 --
-ALTER TABLE `reserve`
-  ADD CONSTRAINT `reserve_ibfk_1` FOREIGN KEY (`theatre_name`) REFERENCES `theatre` (`theatre_name`),
-  ADD CONSTRAINT `reserve_ibfk_2` FOREIGN KEY (`movie_name`) REFERENCES `movie` (`movie_name`);
+ALTER TABLE `reservation`
+  ADD CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`theatre_name`) REFERENCES `theatre` (`theatre_name`),
+  ADD CONSTRAINT `reservation_ibfk_2` FOREIGN KEY (`movie_name`) REFERENCES `movie` (`movie_name`);
 
 --
 -- Constraints for table `ticket`
@@ -210,6 +238,12 @@ ALTER TABLE `ticket`
   ADD CONSTRAINT `ticket_ibfk_1` FOREIGN KEY (`theatre_id`) REFERENCES `theatre` (`theatre_id`),
   ADD CONSTRAINT `ticket_ibfk_2` FOREIGN KEY (`movie_name`) REFERENCES `movie` (`movie_name`),
   ADD CONSTRAINT `ticket_ibfk_3` FOREIGN KEY (`username`) REFERENCES `user` (`username`);
+
+--
+-- Constraints for table `time_slots`
+--
+ALTER TABLE `time_slots`
+  ADD CONSTRAINT `time_slots_ibfk_1` FOREIGN KEY (`slot_id`) REFERENCES `reservation` (`slot_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
