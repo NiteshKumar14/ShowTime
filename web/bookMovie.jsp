@@ -5,11 +5,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Sign in</title>
     <link rel="stylesheet" href="css/b2style.css">
+     <script defer type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <link rel="stylesheet" href="css/movie_card.css">
+    <script defer src="js/fetchDate.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
    
      
@@ -117,7 +119,7 @@
 </div> <!-- end movie-card -->
 
 <form action="searchTheatre.jsp" method="post">
-    <input type="hidden" name="bookDate" id="currentDate"  >
+    <input type="hidden" name="bookDate" id="currentDate">
     <input type="hidden" name="movie_name" value="<%= request.getParameter("movie_name") %> "  >
 <input type="submit" value="Book Tickets" >
 </form>                    

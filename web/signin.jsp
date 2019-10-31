@@ -70,7 +70,13 @@
                 <div class="fadeIn first">
                     <i class="large material-icons">account_circle</i>
                 </div>
-                   
+                 <%
+                     if(request.getParameter("error") != null){
+                 %> 
+                 <script>
+                     alert("incorrect username or password");
+                 </script>
+                 <% } %>
                 <!-- Login Form -->
                  <form action="Signin" method="post" id="form-signin">
                     <input type="text" id="login" class="fadeIn second" name="username" placeholder="login" onfocus="changeCol1()" required>

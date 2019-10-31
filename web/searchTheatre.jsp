@@ -14,19 +14,27 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title> Theatre list </title>
+        <script defer type="text/javascript" src="js/findDate.js"></script>
+        <script defer type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     </head>
     <body>
+        <form action="searchTheatre.jsp" action="post">
+        <div class="btn-group mr-2" role="group" aria-label="First group" id="date1"></div>
+        <input type="hidden" name="movie_name" value="<%= request.getParameter("movie_name") %>">
+        
+        </form>
    <%
        
        Driver driver=(Driver)(Class.forName("com.mysql.jdbc.Driver").newInstance());
        DriverManager.registerDriver(driver);
        String movie_name=request.getParameter("movie_name");
      
-       String date="2019-10-27";
+       String date=request.getParameter("bookDate");
+       
        String times;
        int slotc;
        String []slots;

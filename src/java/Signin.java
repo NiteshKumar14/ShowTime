@@ -63,8 +63,8 @@ public class Signin extends HttpServlet {
         {
            
            
-       out.println("incoreect username or password");
-       response.setHeader("refresh","5;url=signin.jsp");     
+       
+       response.setHeader("refresh","1;url=signin.jsp?error=1");     
         }
 
         
