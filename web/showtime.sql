@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 31, 2019 at 08:17 AM
+-- Generation Time: Oct 31, 2019 at 09:37 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -72,7 +72,7 @@ CREATE TABLE `reservation` (
 --
 
 INSERT INTO `reservation` (`theatre_name`, `movie_name`, `slot_id`, `date`, `screen_id`) VALUES
-('PVR PACIFIC', 'CHICHHCHORE', 1, '2019-10-31', 2),
+('PVR PACIFIC', 'CHICHHCHORE', 1, '2019-11-01', 2),
 ('PVR VIKASPURI', 'CHICHHCHORE', 2, '2019-10-31', 2);
 
 -- --------------------------------------------------------
@@ -115,13 +115,6 @@ CREATE TABLE `ticket` (
   `show_time` time NOT NULL,
   `ticket_price` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `ticket`
---
-
-INSERT INTO `ticket` (`username`, `ticket_id`, `theatre_name`, `movie_name`, `move_price`, `theatre_id`, `booking_id`, `booking_date`, `booking_time`, `show_date`, `show_time`, `ticket_price`) VALUES
-('Eclipse21', 'TI01', 'PVR PACIFIC', 'CHICHHCHORE', 245, 'T001', 1223232, '2019-10-21', '08:13:00', '2019-10-23', '10:05:00', 330);
 
 -- --------------------------------------------------------
 

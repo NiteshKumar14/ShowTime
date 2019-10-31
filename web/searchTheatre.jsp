@@ -22,9 +22,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <form action="searchTheatre.jsp" action="post">
+        <form action="searchTheatre" action="post" id="dateForm">
         <div class="btn-group mr-2" role="group" aria-label="First group" id="date1"></div>
         <input type="hidden" name="movie_name" value="<%= request.getParameter("movie_name") %>">
+        <input type="hidden" name="bookDate" id="date12" >
         
         </form>
    <%
@@ -34,6 +35,12 @@
        String movie_name=request.getParameter("movie_name");
      
        String date=request.getParameter("bookDate");
+       if(request.getAttribute("servlet")!=null)
+       {
+           date=request.getAttribute("bookDate").toString();
+           //out.print("date is"+date);
+       }
+           
        
        String times;
        int slotc;
