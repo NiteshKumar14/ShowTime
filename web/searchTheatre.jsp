@@ -40,6 +40,7 @@
            date=request.getAttribute("bookDate").toString();
            //out.print("date is"+date);
        }
+       request.setAttribute("date",date);
            
        
        String times;
@@ -64,15 +65,26 @@
              <%= rs.getString("theatre_name") %>
             
          </div>
-      <div class="panel-body">
-          <form action="bookSeats.jsp" method="post"> 
-      <% ResultSet rss=ts.executeQuery();         
       
+        
+      <% ResultSet rss=ts.executeQuery();         
          while(rss.next()){ %>
-       <button type="submit" name="getTime" class="btn btn-outline-dark"><%= rss.getString("timing") %></button>
-           <% } %>
-          </form>
-      </div>
+         <form action="bookSeats" method="post" class="panel-body"> 
+         <input type="hidden" name="movie_name" value="<%= request.getParameter("movie_name") %>">
+         <input type="hidden" name="date" value="<%= request.getAttribute("date")  %>">
+    
+         <input type="hidden" name="slot" value="<%= rs.getString("slot_id") %>">
+         <input type="hidden" name="theatre_name" value="<%= rs.getString("theatre_name") %>">
+         <input type="hidden" name="screen_id" value="<%= rs.getString("screen_id") %>">
+         <input type="hidden" name="timing" value="<%= rss.getString("timing") %>">
+         
+         <button type="submit" name="getTime" class="btn btn-outline-dark" ><%= rss.getString("timing") %></button>
+       
+           </form>    
+         
+       <% } %>
+          
+      
       
        
     </div>

@@ -11,13 +11,22 @@
 <head>
 
 </head>
-<link rel="stylesheet" href="css/seat.css">
+ <link rel="stylesheet" href="css/materialize.min.css">
+
+
 <script defer src="js/seat.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 
+
 <body>
-    <input type="hidden" value="A1,A3,A4" id="reserved">
-    <form method="POST">
+      <%
+            if(session.getAttribute("id")==null)
+
+            response.sendRedirect("signin.jsp");             
+         %>
+         
+         <input type="hidden" value="<%=  request.getAttribute("seat_booked") %>" id="reserved">
+         <form method="POST" action="payment.jsp">
         <table>
             <thead>
                 <tr>
@@ -46,609 +55,609 @@
                 <tr>
                     <td>A</td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                          <input type="checkbox" class="checkbox-button__input" id="A1" name="choice1" >
-                          <span class="checkbox-button__control"></span>
+                        
+                        <label for="A1">
+                          <input type="checkbox" class="fiiled-in" id="A1" name="check" >
+                          <span class="label-text"></span>
                          
                         </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="A2" name="choice1" >
-                              <span class="checkbox-button__control"></span>
+                        
+                            <label for="A2">
+                              <input type="checkbox" class="filled-in" id="A2" name="check" >
+                              <span class="label-text"></span>
                              
                             </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="A3" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                        
+                            <label for="A3">
+                              <input type="checkbox" class="filled-in" id="A3" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="A4" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                        
+                            <label for="A4">
+                              <input type="checkbox" class="filled-in" id="A4" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="A5" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                        
+                            <label for="A5">
+                              <input type="checkbox" class="filled-in" id="A5" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="A6" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                        
+                            <label for="A6">
+                              <input type="checkbox" class="filled-in" id="A6" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="A7" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                        
+                            <label for="A7">
+                              <input type="checkbox" class="filled-in" id="A7" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="A8" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                        
+                            <label for="A8">
+                              <input type="checkbox" class="filled-in" id="A8" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="A9" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                        
+                            <label for="A9">
+                              <input type="checkbox" class="filled-in" id="A9" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="A10" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                        
+                            <label for="A10">
+                              <input type="checkbox" class="filled-in" id="A10" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="A11" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                        
+                            <label for="A11">
+                              <input type="checkbox"  id="A11" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="A12" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                        
+                            <label for="A12">
+                              <input type="checkbox" class="filled-in" id="A12" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="A13" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                        
+                            <label for="A13">
+                              <input type="checkbox" class="filled-in" id="A13" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="A14" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                        
+                            <label for="A14">
+                              <input type="checkbox" class="filled-in" id="A14" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="A15" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                        
+                            <label for="A15">
+                              <input type="checkbox" class="filled-in" id="A15" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="A16" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                        
+                            <label for="A16">
+                              <input type="checkbox" class="filled-in" id="A16" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="A17" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                        
+                            <label for="A17">
+                              <input type="checkbox" class="filled-in" id="A17" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="A18" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                        
+                            <label for="A18">
+                              <input type="checkbox" class="filled-in" id="A18" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="A19" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                        
+                            <label for="A19">
+                              <input type="checkbox" class="filled-in" id="A19" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="A20" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                        
+                            <label for="A20">
+                              <input type="checkbox" class="filled-in" id="A20" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                        </div>
+                        
                     </td>
                 </tr>
                 <tr>
                     <td>B</td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                          <input type="checkbox" class="checkbox-button__input" id="B1" name="choice1">
-                          <span class="checkbox-button__control"></span>
+                        
+                            <label for="B1">
+                          <input type="checkbox" class="filled-in" id="B1" name="check">
+                          <span class="label-text"></span>
                          
                         </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="B2" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                        
+                            <label for="B2">
+                              <input type="checkbox" class="filled-in" id="B2" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="B3" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                        
+                            <label for="B3">
+                              <input type="checkbox" class="filled-in" id="B3" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="B4" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                        
+                            <label for="B4">
+                              <input type="checkbox" class="filled-in" id="B4" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="B5" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                        
+                            <label for="B5">
+                              <input type="checkbox" class="filled-in" id="B5" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="B6" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                        
+                            <label for="B6">
+                              <input type="checkbox" class="filled-in" id="B6" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="B7" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                        
+                            <label for="B7">
+                              <input type="checkbox" class="filled-in" id="B7" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="B8" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                        
+                            <label for="B8">
+                              <input type="checkbox" class="filled-in" id="B8" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="B9" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                        
+                            <label for="B9">
+                              <input type="checkbox" class="filled-in" id="B9" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="B10" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                        
+                            <label for="B10">
+                              <input type="checkbox" class="filled-in" id="B10" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="B11" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                        
+                            <label for="B11">
+                              <input type="checkbox" class="filled-in" id="B11" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="B12" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                        
+                            <label for="B12">
+                              <input type="checkbox" class="filled-in" id="B12" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="B13" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                        
+                            <label for="B13">
+                              <input type="checkbox" class="filled-in" id="B13" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="B14" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                        
+                            <label for="B14">
+                              <input type="checkbox" class="filled-in" id="B14" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="B15" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                        
+                            <label for="B15">
+                              <input type="checkbox" class="filled-in" id="B15" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="B16" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                        
+                            <label for="B16">
+                              <input type="checkbox" class="filled-in" id="B16" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                                  <input type="checkbox" class="checkbox-button__input" id="B17" name="choice1">
-                                  <span class="checkbox-button__control"></span>
+                        
+                            <label for="B17">
+                                  <input type="checkbox" class="filled-in" id="B17" name="check">
+                                  <span class="label-text"></span>
                                  
                                 </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="B18" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                        
+                            <label for="B18">
+                              <input type="checkbox" class="filled-in" id="B18" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                                  <input type="checkbox" class="checkbox-button__input" id="B19" name="choice1">
-                                  <span class="checkbox-button__control"></span>
+                        
+                            <label for="B19">
+                                  <input type="checkbox" class="filled-in" id="B19" name="check">
+                                  <span class="label-text"></span>
                                  
                                 </label>
 
-                        </div>
+                        
                     </td>
                     <td>
-                        <div class="example">
-                            <label class="checkbox-button">
-                                  <input type="checkbox" class="checkbox-button__input" id="B20" name="choice1">
-                                  <span class="checkbox-button__control"></span>
+                        
+                            <label for="B20">
+                                  <input type="checkbox" class="filled-in" id="B20" name="check">
+                                  <span class="label-text"></span>
                                  
                                 </label>
 
-                        </div>
+                        
                     </td>
                 </tr>
                 <td>C</td>
                 <td>
-                    <div class="example">
-                        <label class="checkbox-button">
-                      <input type="checkbox" class="checkbox-button__input" id="C1" name="choice1">
-                      <span class="checkbox-button__control"></span>
+                    
+                        <label for="C1">
+                      <input type="checkbox" class="filled-in" id="C1" name="check">
+                      <span class="label-text"></span>
                      
                     </label>
 
-                    </div>
+                    
                 </td>
                 <td>
-                    <div class="example">
-                        <label class="checkbox-button">
-                          <input type="checkbox" class="checkbox-button__input" id="C2" name="choice1">
-                          <span class="checkbox-button__control"></span>
+                    
+                        <label for="C2">
+                          <input type="checkbox" class="filled-in" id="C2" name="check">
+                          <span class="label-text"></span>
                          
                         </label>
 
-                    </div>
+                    
                 </td>
                 <td>
-                    <div class="example">
-                        <label class="checkbox-button">
-                          <input type="checkbox" class="checkbox-button__input" id="C3" name="choice1">
-                          <span class="checkbox-button__control"></span>
+                    
+                        <label for="C3">
+                          <input type="checkbox" class="filled-in" id="C3" name="check">
+                          <span class="label-text"></span>
                          
                         </label>
 
-                    </div>
+                    
                 </td>
                 <td>
-                    <div class="example">
-                        <label class="checkbox-button">
-                          <input type="checkbox" class="checkbox-button__input" id="C4" name="choice1">
-                          <span class="checkbox-button__control"></span>
+                    
+                        <label for="C4">
+                          <input type="checkbox" class="filled-in" id="C4" name="check">
+                          <span class="label-text"></span>
                          
                         </label>
 
-                    </div>
+                    
                 </td>
                 <td>
-                    <div class="example">
-                        <label class="checkbox-button">
-                          <input type="checkbox" class="checkbox-button__input" id="C5" name="choice1">
-                          <span class="checkbox-button__control"></span>
+                    
+                        <label for="C5">
+                          <input type="checkbox" class="filled-in" id="C5" name="check">
+                          <span class="label-text"></span>
                          
                         </label>
 
-                    </div>
+                    
                 </td>
                 <td>
-                    <div class="example">
-                        <label class="checkbox-button">
-                          <input type="checkbox" class="checkbox-button__input" id="C6" name="choice1">
-                          <span class="checkbox-button__control"></span>
+                    
+                        <label for="C6">
+                          <input type="checkbox" class="filled-in" id="C6" name="check">
+                          <span class="label-text"></span>
                          
                         </label>
 
-                    </div>
+                    
                 </td>
                 <td>
-                    <div class="example">
-                        <label class="checkbox-button">
-                          <input type="checkbox" class="checkbox-button__input" id="C7" name="choice1">
-                          <span class="checkbox-button__control"></span>
+                    
+                        <label for="C7">
+                          <input type="checkbox" class="filled-in" id="C7" name="check">
+                          <span class="label-text"></span>
                          
                         </label>
 
-                    </div>
+                    
                 </td>
                 <td>
-                    <div class="example">
-                        <label class="checkbox-button">
-                          <input type="checkbox" class="checkbox-button__input" id="C8" name="choice1">
-                          <span class="checkbox-button__control"></span>
+                    
+                        <label for="C8">
+                          <input type="checkbox" class="filled-in" id="C8" name="check">
+                          <span class="label-text"></span>
                          
                         </label>
 
-                    </div>
+                    
                 </td>
                 <td>
-                    <div class="example">
-                        <label class="checkbox-button">
-                          <input type="checkbox" class="checkbox-button__input" id="C9" name="choice1">
-                          <span class="checkbox-button__control"></span>
+                    
+                        <label for="C9">
+                          <input type="checkbox" class="filled-in" id="C9" name="check">
+                          <span class="label-text"></span>
                          
                         </label>
 
-                    </div>
+                    
                 </td>
                 <td>
-                    <div class="example">
-                        <label class="checkbox-button">
-                          <input type="checkbox" class="checkbox-button__input" id="C10" name="choice1">
-                          <span class="checkbox-button__control"></span>
+                    
+                        <label for="C10">
+                          <input type="checkbox" class="filled-in" id="C10" name="check">
+                          <span class="label-text"></span>
                          
                         </label>
 
-                    </div>
+                    
                 </td>
                 <td>
-                    <div class="example">
-                        <label class="checkbox-button">
-                          <input type="checkbox" class="checkbox-button__input" id="C11" name="choice1">
-                          <span class="checkbox-button__control"></span>
+                    
+                        <label for="C11">
+                          <input type="checkbox" class="filled-in" id="C11" name="check">
+                          <span class="label-text"></span>
                          
                         </label>
 
-                    </div>
+                    
                 </td>
                 <td>
-                    <div class="example">
-                        <label class="checkbox-button">
-                          <input type="checkbox" class="checkbox-button__input" id="C12" name="choice1">
-                          <span class="checkbox-button__control"></span>
+                    
+                        <label for="C12">
+                          <input type="checkbox" class="filled-in" id="C12" name="check">
+                          <span class="label-text"></span>
                          
                         </label>
 
-                    </div>
+                    
                 </td>
                 <td>
-                    <div class="example">
-                        <label class="checkbox-button">
-                          <input type="checkbox" class="checkbox-button__input" id="C13" name="choice1">
-                          <span class="checkbox-button__control"></span>
+                    
+                        <label for="C13">
+                          <input type="checkbox" class="filled-in" id="C13" name="check">
+                          <span class="label-text"></span>
                          
                         </label>
 
-                    </div>
+                    
                 </td>
                 <td>
-                    <div class="example">
-                        <label class="checkbox-button">
-                          <input type="checkbox" class="checkbox-button__input" id="C14" name="choice1">
-                          <span class="checkbox-button__control"></span>
+                    
+                        <label for="C14">
+                          <input type="checkbox" class="filled-in" id="C14" name="check">
+                          <span class="label-text"></span>
                          
                         </label>
 
-                    </div>
+                    
                 </td>
                 <td>
-                    <div class="example">
-                        <label class="checkbox-button">
-                          <input type="checkbox" class="checkbox-button__input" id="C15" name="choice1">
-                          <span class="checkbox-button__control"></span>
+                    
+                        <label for="C15">
+                          <input type="checkbox" class="filled-in" id="C15" name="check">
+                          <span class="label-text"></span>
                          
                         </label>
 
-                    </div>
+                    
                 </td>
                 <td>
-                    <div class="example">
-                        <label class="checkbox-button">
-                          <input type="checkbox" class="checkbox-button__input" id="C16" name="choice1">
-                          <span class="checkbox-button__control"></span>
+                    
+                        <label for="C16">
+                          <input type="checkbox" class="filled-in" id="C16" name="check">
+                          <span class="label-text"></span>
                          
                         </label>
 
-                    </div>
+                    
                 </td>
                 <td>
-                    <div class="example">
-                        <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="C17" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                    
+                        <label for="C17">
+                              <input type="checkbox" class="filled-in" id="C17" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                    </div>
+                    
                 </td>
                 <td>
-                    <div class="example">
-                        <label class="checkbox-button">
-                          <input type="checkbox" class="checkbox-button__input" id="C18" name="choice1">
-                          <span class="checkbox-button__control"></span>
+                    
+                        <label for="C18">
+                          <input type="checkbox" class="filled-in" id="C18" name="check">
+                          <span class="label-text"></span>
                          
                         </label>
 
-                    </div>
+                    
                 </td>
                 <td>
-                    <div class="example">
-                        <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="C19" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                    
+                        <label for="C19">
+                              <input type="checkbox" class="filled-in" id="C19" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                    </div>
+                    
                 </td>
                 <td>
-                    <div class="example">
-                        <label class="checkbox-button">
-                              <input type="checkbox" class="checkbox-button__input" id="C20" name="choice1">
-                              <span class="checkbox-button__control"></span>
+                    
+                        <label for="C20">
+                              <input type="checkbox" class="filled-in" id="C20" name="check">
+                              <span class="label-text"></span>
                              
                             </label>
 
-                    </div>
+                    
                 </td>
                 </tr>
         </table>
