@@ -12,7 +12,7 @@ $(document).ready(function() {
     alert("seats reserved are " + seats+"hhhhh");
     array1 = seats.split(',');
     
-   
+        var length1=array1.length-1;
        alert(array1[0]);
     var i;
     for (i = 0; i < array1.length; i++) {
