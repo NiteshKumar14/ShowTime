@@ -13,9 +13,9 @@
 </head>
  <link rel="stylesheet" href="css/materialize.min.css">
 
+<script defer type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 
 <script defer src="js/seat.js"></script>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 
 
 <body>
@@ -26,6 +26,7 @@
          %>
          
          <input type="hidden" value="<%=  request.getAttribute("seat_booked") %>" id="reserved">
+         <input type="hidden" id="client_seats" name="client_seats">
          <form method="POST" action="payment.jsp">
         <table>
             <thead>
