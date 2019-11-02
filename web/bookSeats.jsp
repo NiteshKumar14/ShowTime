@@ -664,6 +664,5 @@
         <input type="submit" value="PROCEED" ID="PROCEED">
     </form>
 </body>
-<script defer src="seat.js"></script>
 
 </html>
