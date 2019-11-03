@@ -12,6 +12,8 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <%
+            request.getRequestDispatcher("generateTicket.jsp").forward(request,response);
+        %>
     </body>
 </html>

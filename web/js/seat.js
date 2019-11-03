@@ -4,22 +4,24 @@ var seats;
 var array1;
 var price;
 var total = 0;
+var length1;
 
 
 $(document).ready(function() {
 
     seats = document.getElementById("reserved").value;
-    alert("seats reserved are " + seats+"hhhhh");
+    alert("seats reserved are " + seats);
     array1 = seats.split(',');
-    
-        var length1=array1.length-1;
-       alert(array1[0]);
+
+    length1 = array1.length - 1;
+    alert("length is" + length1);
+    alert(array1[0]);
     var i;
     for (i = 0; i < array1.length; i++) {
         let set = document.getElementById(array1[i].toString());
-        set.checked=true;
-        set.disabled = true;
        
+        set.disabled = true;
+
 
 
     }
@@ -27,7 +29,8 @@ $(document).ready(function() {
     price.setAttribute("type", "text");
     price.setAttribute("value", "Total Price Rs." + total);
     price.setAttribute("disabled", true);
-    document.body.appendChild(price);
+    document.getElementById("seats_form").appendChild(price);
+   
 
 
 });
@@ -67,20 +70,27 @@ $('input[type="checkbox"]').click(function() {
     if (!$(this).is(':checked')) {
 
         if ($(this).attr('id').toString().match(/^[A][0-9]+/g)) {
-            total = total - 200;
+            if(total>0)
+            {total = total - 200;
             price.setAttribute("value", "Total Price Rs." + total);
-            alert("total" + total);
+            alert("total" + total);}
         }
         if ($(this).attr('id').toString().match(/^[B][0-9]+/g)) {
-            total = total - 300;
-            price.setAttribute("value", "Total Price Rs." + total);
-            alert("total" + total);
-
+            if(total>0)
+            {
+                total = total - 300;
+            
+                price.setAttribute("value", "Total Price Rs." + total);
+            
+                alert("total" + total);
+            }
         }
         if ($(this).attr('id').toString().match(/^[C][0-9]+/g)) {
+           if(total>0){
             total = total - 400;
             price.setAttribute("value", "Total Price Rs." + total);
             alert("total" + total);
+        }
         }
         var index = array1.indexOf($(this).attr('id'));
         alert("index is" + index);
@@ -93,22 +103,28 @@ $('input[type="checkbox"]').click(function() {
 
 
 });
-document.getElementById("PROCEED").addEventListener("click", function() {
-    
-    var m=0;
-    var sets="";
-    alert("sets is"+sets);
-    for(m=length1;m<array1.length;m++)
-    {
-        sets=sets+array1[m]+",";
-        alert("sets is"+sets);
+document.getElementById("PROCEED").addEventListener("click", function(event) {
+    if(total==0)
+    {   event.preventDefault();
+        alert("please select a seat ")
+        docment.location.reload();
     }
-    alert(sets);
-    
-    
-    document.getElementById("client_seats").value=sets;
+    var m = 0;
+    var sets = "";
+    alert("sets is" + sets);
+    length1=length1+1;
+    alert("length is" + length1);
+    for (m = length1; m < array1.length; m++) {
+        sets = sets + array1[m] + ",";
+        alert("sets is" + sets);
+    }
+    alert("after" + sets);
+
+
+    document.getElementById("client_seats").value = sets;
     document.getElementById("reserved").value = array1.join();
     document.getElementById("reserved").type = "text";
-    document.getElementById("client_seats").type="text";
+    document.getElementById("client_seats").type = "text";
     alert(array1);
+
 });

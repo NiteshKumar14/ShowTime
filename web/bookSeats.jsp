@@ -25,9 +25,10 @@
             response.sendRedirect("signin.jsp");             
          %>
          
-         <input type="hidden" value="<%=  request.getAttribute("seat_booked") %>" id="reserved">
+        
+         <form method="POST" action="payment.jsp" id="seats_form" >
+              <input type="hidden" value="<%=  request.getAttribute("seat_booked") %>" id="reserved">
          <input type="hidden" id="client_seats" name="client_seats">
-         <form method="POST" action="payment.jsp">
         <table>
             <thead>
                 <tr>
@@ -662,6 +663,14 @@
                 </td>
                 </tr>
         </table>
+          
+         <input type="hidden" name="movie_name" value=" <%= request.getParameter("movie_name") %>">
+         <input type="hidden" name="date" value="<%= request.getParameter("date")  %>">
+    
+         <input type="hidden" name="slot" value="<%= request.getParameter("slot") %>">
+         <input type="hidden" name="theatre_name" value=" <%=  request.getParameter("theatre_name") %>">
+         <input type="hidden" name="screen_id" value="<%= request.getParameter("screen_id") %>">
+         <input type="hidden" name="timing" value="<%=  request.getParameter("timing") %>">
         <input type="submit" value="PROCEED" ID="PROCEED">
     </form>
 </body>
