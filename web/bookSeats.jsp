@@ -27,7 +27,7 @@
          
         
          <form method="POST" action="payment.jsp" id="seats_form" >
-              <input type="hidden" value="<%=  request.getAttribute("seat_booked") %>" id="reserved">
+              <input type="hidden" value="<%=  request.getAttribute("seat_booked") %>" id="reserved" name="reserved">
          <input type="hidden" id="client_seats" name="client_seats">
         <table>
             <thead>
@@ -671,6 +671,7 @@
          <input type="hidden" name="theatre_name" value=" <%=  request.getParameter("theatre_name") %>">
          <input type="hidden" name="screen_id" value="<%= request.getParameter("screen_id") %>">
          <input type="hidden" name="timing" value="<%=  request.getParameter("timing") %>">
+         <input type="hidden" name="seats_reserved" value="<%=  request.getAttribute("seat_booked") %>">
         <input type="submit" value="PROCEED" ID="PROCEED">
     </form>
 </body>

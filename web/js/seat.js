@@ -1,11 +1,11 @@
-/* global length1 */
+/* global length1, amount */
 
 var seats;
 var array1;
 var price;
 var total = 0;
 var length1;
-
+var amount;
 
 $(document).ready(function() {
 
@@ -27,10 +27,15 @@ $(document).ready(function() {
     }
     price = document.createElement("INPUT");
     price.setAttribute("type", "text");
+    price.setAttribute("name","price");
     price.setAttribute("value", "Total Price Rs." + total);
     price.setAttribute("disabled", true);
+    amount=document.createElement("INPUT");
+    amount.setAttribute("type","hidden");
+    amount.setAttribute("value",""+total);
+    amount.setAttribute("name","amount");
     document.getElementById("seats_form").appendChild(price);
-   
+    document.getElementById("seats_form").appendChild(amount);
 
 
 });
@@ -46,16 +51,19 @@ $('input[type="checkbox"]').click(function() {
         if ($(this).attr('id').toString().match(/^[A][0-9]+/)) {
             total = total + 200;
             price.setAttribute("value", "Total Price Rs." + total);
+            amount.setAttribute("value",""+total);
             alert("total" + total);
         }
         if ($(this).attr('id').toString().match(/^[B][0-9]+/)) {
             total = total + 300;
             price.setAttribute("value", "Total Price Rs." + total);
+            amount.setAttribute("value",""+total);
             alert("total" + total);
         }
         if ($(this).attr('id').toString().match(/^[C][0-9]+/)) {
             total = total + 400;
             price.setAttribute("value", "Total Price Rs." + total);
+            amount.setAttribute("value",""+total);
             alert("total" + total);
         }
     }
@@ -73,6 +81,7 @@ $('input[type="checkbox"]').click(function() {
             if(total>0)
             {total = total - 200;
             price.setAttribute("value", "Total Price Rs." + total);
+            amount.setAttribute("value",""+total);
             alert("total" + total);}
         }
         if ($(this).attr('id').toString().match(/^[B][0-9]+/g)) {
@@ -82,6 +91,7 @@ $('input[type="checkbox"]').click(function() {
             
                 price.setAttribute("value", "Total Price Rs." + total);
             
+                amount.setAttribute("value",""+total);
                 alert("total" + total);
             }
         }
@@ -89,6 +99,7 @@ $('input[type="checkbox"]').click(function() {
            if(total>0){
             total = total - 400;
             price.setAttribute("value", "Total Price Rs." + total);
+            amount.setAttribute("value",""+total);
             alert("total" + total);
         }
         }
