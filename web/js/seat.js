@@ -118,7 +118,7 @@ document.getElementById("PROCEED").addEventListener("click", function(event) {
     if(total==0)
     {   event.preventDefault();
         alert("please select a seat ")
-        docment.location.reload();
+        document.location.reload();
     }
     var m = 0;
     var sets = "";
