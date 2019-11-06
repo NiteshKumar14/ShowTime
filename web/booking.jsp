@@ -107,13 +107,13 @@
             
         </div>
 </div>
-<input type="hidden" value="<%= rs.getString("movie_name")   %>" name="movie_name">                 
-<input type="hidden" value="<%= rs.getString("movie_desc")   %>" name="movie_desc">  
-<input type="hidden" value="<%= rs.getString("movie_duration")   %>" name="movie_duration">  
-<input type="hidden" value="<%= rs.getString("movie_primary")   %>" name="movie_primary">  
-<input type="hidden" value="<%= rs.getString("movie_secondary")   %>" name="movie_secondary">  
-<input type="hidden" value="<%= rs.getString("movie_genre")   %>" name="movie_genre">  
-<input type="hidden" value="<%= rs.getString("css")   %>" name="css">
+<input type="hidden" value="<%=rs.getString("movie_name")%>" name="movie_name">                 
+<input type="hidden" value="<%=rs.getString("movie_desc")%>" name="movie_desc">  
+<input type="hidden" value="<%=rs.getString("movie_duration")%>" name="movie_duration">  
+<input type="hidden" value="<%=rs.getString("movie_primary")%>" name="movie_primary">  
+<input type="hidden" value="<%=rs.getString("movie_secondary")%>" name="movie_secondary">  
+<input type="hidden" value="<%=rs.getString("movie_genre")%>" name="movie_genre">  
+<input type="hidden" value="<%=rs.getString("css")%>" name="css">
             </form>
                     
 <% }%>

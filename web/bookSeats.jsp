@@ -664,14 +664,14 @@
                 </tr>
         </table>
           
-         <input type="hidden" name="movie_name" value=" <%= request.getParameter("movie_name") %>">
-         <input type="hidden" name="date" value="<%= request.getParameter("date")  %>">
+         <input type="hidden" name="movie_name" value="<%=request.getParameter("movie_name")%>">
+         <input type="hidden" name="date" value="<%=request.getParameter("date")%>">
     
-         <input type="hidden" name="slot" value="<%= request.getParameter("slot") %>">
-         <input type="hidden" name="theatre_name" value=" <%=  request.getParameter("theatre_name") %>">
-         <input type="hidden" name="screen_id" value="<%= request.getParameter("screen_id") %>">
-         <input type="hidden" name="timing" value="<%=  request.getParameter("timing") %>">
-         <input type="hidden" name="seats_reserved" value="<%=  request.getAttribute("seat_booked") %>">
+         <input type="hidden" name="slot" value="<%=request.getParameter("slot")%>">
+         <input type="hidden" name="theatre_name" value=" <%=request.getParameter("theatre_name")%>">
+         <input type="hidden" name="screen_id" value="<%=request.getParameter("screen_id")%>">
+         <input type="hidden" name="timing" value="<%=request.getParameter("timing")%>">
+         <input type="hidden" name="seats_reserved" value="<%=request.getAttribute("seat_booked")%>">
         <input type="submit" value="PROCEED" ID="PROCEED">
     </form>
 </body>

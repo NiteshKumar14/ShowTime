@@ -102,16 +102,16 @@
     </div>
     <form action="generateTicket" method="post">
     <div class="button">
-          <input type="hidden" name="movie_name" value=" <%= request.getParameter("movie_name") %>">
-         <input type="hidden" name="date" value="<%= request.getParameter("date")  %>">
+          <input type="hidden" name="movie_name" value="<%=request.getParameter("movie_name")%>">
+         <input type="hidden" name="date" value="<%=request.getParameter("date")%>">
     
-         <input type="hidden" name="slot" value="<%= request.getParameter("slot") %>">
-         <input type="hidden" name="theatre_name" value=" <%=  request.getParameter("theatre_name") %>">
-         <input type="hidden" name="screen_id" value="<%= request.getParameter("screen_id") %>">
-         <input type="hidden" name="timing" value="<%=  request.getParameter("timing") %>">
-         <input type="hidden" name="amount" value="<%=  request.getParameter("amount") %>">
-         <input type="hidden" name="client_seats" value="<%= request.getParameter("client_seats") %>">
-           <input type="hidden" name="tt" value="<%=  request.getParameter("reserved") %>">
+         <input type="hidden" name="slot" value="<%=request.getParameter("slot")%>">
+         <input type="hidden" name="theatre_name" value="<%=request.getParameter("theatre_name")%>">
+         <input type="hidden" name="screen_id" value="<%=request.getParameter("screen_id")%>">
+         <input type="hidden" name="timing" value="<%=request.getParameter("timing")%>">
+         <input type="hidden" name="amount" value="<%=request.getParameter("amount")%>">
+         <input type="hidden" name="client_seats" value="<%=request.getParameter("client_seats")%>">
+           <input type="hidden" name="tt" value="<%=request.getParameter("reserved")%>">
          
         <button type="submit"><i class="ion-locked"></i> Confirm and Pay</button>
     </div>

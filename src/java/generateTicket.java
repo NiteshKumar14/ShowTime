@@ -8,7 +8,9 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -55,7 +57,7 @@ public class generateTicket extends HttpServlet {
        stf=new SimpleDateFormat("HH:mm");
        String curr_time=stf.format(d);
        PrintWriter pw=response.getWriter();
-       pw.print("date is "+curr_date +"time is "+curr_time+"reserved is"+seats_reserved);
+       pw.print("date is "+curr_date +"time is "+curr_time+"reserved is"+seats_reserved+"movie_name is "+movie_name);
        
        
        
@@ -77,7 +79,25 @@ public class generateTicket extends HttpServlet {
        ps.setString(2, timing);
        ps.setString(3, slot);
        ps.executeUpdate();
+       out.print("SELECT movie_primary  from movie where movie_name like %"+movie_name+"");
+       PreparedStatement ts=con.prepareStatement("SELECT movie_primary  from movie where movie_name like ?");
+       ts.setString(1,"%"+movie_name+"%");
+       ResultSet rs=ts.executeQuery();
+       
+       while(rs.next())
+       {out.print("rs is"+rs.getString(1));
+       request.setAttribute("movie_image",rs.getString(1));
+       
+       
+       }
        request.getRequestDispatcher("generateTicket.jsp").forward(request, response);
+
+       
+       
+       
+      
+     
+      
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -88,12 +88,12 @@
         <p class="text">
           <%= rs.getString("movie_desc") %>
         </p>
-        <input type="hidden" name="movie_name" value="<%= rs.getString("movie_name")%>">
-        <input type="submit" class="fadeIn fourth" value="Book Now" <% if(session.getAttribute("id")!=null) {%>onclick="window.location='bookMovie.jsp';"<% } else {%> onclick="window.location='signin.jsp';"<% } %>>
-        <input type="hidden" name="movie_desc" value="<%= rs.getString("movie_desc") %>">
-        <input type="hidden" name="movie_director" value="<%= rs.getString("movie_directer") %>">
-        <input type="hidden" name="movie_primary" value="<%= rs.getString("movie_primary") %>">
-        <input type="hidden" name="movie_secondary" value="<%= rs.getString("movie_secondary") %>">
+        <input type="hidden" name="movie_name" value="<%=rs.getString("movie_name")%>">
+        <input type="submit" class="fadeIn fourth" value="Book Now" <% if(session.getAttribute("id")!=null) {%>onclick="window.location='bookMovie.jsp';"<% } else {%> onclick="window.location='signin.jsp';"<% }%>>
+        <input type="hidden" name="movie_desc" value="<%=rs.getString("movie_desc")%>">
+        <input type="hidden" name="movie_director" value="<%=rs.getString("movie_directer")%>">
+        <input type="hidden" name="movie_primary" value="<%=rs.getString("movie_primary")%>">
+        <input type="hidden" name="movie_secondary" value="<%=rs.getString("movie_secondary")%>">
         
             
       </div>

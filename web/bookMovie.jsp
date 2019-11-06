@@ -73,7 +73,7 @@
             
       <div class="details">
       
-          <div class="title1"><%=  request.getParameter("movie_name")  %></div>
+          <div class="title1"><%=request.getParameter("movie_name")%></div>
 
             
         <fieldset class="rating">
@@ -98,13 +98,13 @@
     <div class="description">
       
       <div class="column1">
-          <span class="tag"><%= request.getParameter("movie_genre")  %>  </span>
+          <span class="tag"><%=request.getParameter("movie_genre")%>  </span>
       
       </div> <!-- end column1 -->
       
       <div class="column2">
         
-          <p><%= request.getParameter("movie_desc")  %></p>
+          <p><%=request.getParameter("movie_desc")%></p>
         
        
             
@@ -120,7 +120,7 @@
 
 <form action="searchTheatre.jsp" method="post">
     <input type="hidden" name="bookDate" id="currentDate">
-    <input type="hidden" name="movie_name" value="<%= request.getParameter("movie_name") %> "  >
+    <input type="hidden" name="movie_name" value="<%=request.getParameter("movie_name")%>"  >
 <input type="submit" value="Book Tickets" >
 </form>                    
                     
