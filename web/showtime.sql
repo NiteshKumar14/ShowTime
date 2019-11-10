@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 06, 2019 at 03:59 AM
+-- Generation Time: Nov 10, 2019 at 06:11 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -72,8 +72,8 @@ CREATE TABLE `reservation` (
 --
 
 INSERT INTO `reservation` (`theatre_name`, `movie_name`, `slot_id`, `date`, `screen_id`) VALUES
-('PVR PACIFIC', 'CHICHHCHORE', 1, '2019-11-06', 2),
-('PVR VIKASPURI', 'CHICHHCHORE', 2, '2019-11-04', 2);
+('PVR PACIFIC', 'CHICHHCHORE', 1, '2019-11-12', 2),
+('PVR VIKASPURI', 'CHICHHCHORE', 2, '2019-11-13', 2);
 
 -- --------------------------------------------------------
 
@@ -106,7 +106,7 @@ CREATE TABLE `ticket` (
   `theatre_name` varchar(30) NOT NULL,
   `movie_name` varchar(40) NOT NULL,
   `move_price` int(4) NOT NULL,
-  `booking_id` int(15) NOT NULL,
+  `booking_id` varchar(30) NOT NULL,
   `booking_date` date NOT NULL,
   `booking_time` time NOT NULL,
   `show_date` date NOT NULL,
@@ -119,77 +119,14 @@ CREATE TABLE `ticket` (
 --
 
 INSERT INTO `ticket` (`username`, `theatre_name`, `movie_name`, `move_price`, `booking_id`, `booking_date`, `booking_time`, `show_date`, `show_time`, `seats_booked`) VALUES
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 400, 400, '2019-11-03', '23:21:00', '2019-11-06', '10:15:00', 'A5,A13,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 400, 400, '2019-11-03', '23:23:00', '2019-11-06', '10:15:00', 'A5,A13,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 400, 400, '2019-11-03', '23:23:00', '2019-11-06', '10:15:00', 'A5,A13,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 400, 400, '2019-11-03', '23:24:00', '2019-11-06', '10:15:00', 'A5,A13,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 400, 400, '2019-11-03', '23:26:00', '2019-11-06', '10:15:00', 'A5,A13,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 400, 400, '2019-11-03', '23:29:00', '2019-11-06', '10:15:00', 'A5,A13,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 900, 900, '2019-11-06', '06:42:00', '2019-11-06', '10:15:00', 'A10,B13,C11,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 900, 900, '2019-11-06', '06:44:00', '2019-11-06', '10:15:00', 'A10,B13,C11,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 900, 900, '2019-11-06', '06:52:00', '2019-11-06', '12:50:00', 'A9,B13,C10,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 900, 900, '2019-11-06', '06:53:00', '2019-11-06', '12:50:00', 'A9,B13,C10,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 900, 900, '2019-11-06', '06:53:00', '2019-11-06', '12:50:00', 'A9,B13,C10,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 1700, 1700, '2019-11-06', '06:55:00', '2019-11-06', '12:50:00', 'A15,B14,C15,B16,B17,A17,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 1700, 1700, '2019-11-06', '06:57:00', '2019-11-06', '12:50:00', 'A15,B14,C15,B16,B17,A17,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 1700, 1700, '2019-11-06', '06:59:00', '2019-11-06', '12:50:00', 'A15,B14,C15,B16,B17,A17,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 1700, 1700, '2019-11-06', '07:01:00', '2019-11-06', '12:50:00', 'A15,B14,C15,B16,B17,A17,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 1700, 1700, '2019-11-06', '07:02:00', '2019-11-06', '12:50:00', 'A15,B14,C15,B16,B17,A17,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 1700, 1700, '2019-11-06', '07:04:00', '2019-11-06', '12:50:00', 'A15,B14,C15,B16,B17,A17,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 1700, 1700, '2019-11-06', '07:07:00', '2019-11-06', '12:50:00', 'A15,B14,C15,B16,B17,A17,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 1700, 1700, '2019-11-06', '07:09:00', '2019-11-06', '12:50:00', 'A15,B14,C15,B16,B17,A17,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 1700, 1700, '2019-11-06', '07:09:00', '2019-11-06', '12:50:00', 'A15,B14,C15,B16,B17,A17,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 1700, 1700, '2019-11-06', '07:09:00', '2019-11-06', '12:50:00', 'A15,B14,C15,B16,B17,A17,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 1700, 1700, '2019-11-06', '07:10:00', '2019-11-06', '12:50:00', 'A15,B14,C15,B16,B17,A17,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 1700, 1700, '2019-11-06', '07:12:00', '2019-11-06', '12:50:00', 'A15,B14,C15,B16,B17,A17,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 1700, 1700, '2019-11-06', '07:12:00', '2019-11-06', '12:50:00', 'A15,B14,C15,B16,B17,A17,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 1700, 1700, '2019-11-06', '07:13:00', '2019-11-06', '12:50:00', 'A15,B14,C15,B16,B17,A17,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 1700, 1700, '2019-11-06', '07:13:00', '2019-11-06', '12:50:00', 'A15,B14,C15,B16,B17,A17,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 1700, 1700, '2019-11-06', '07:14:00', '2019-11-06', '12:50:00', 'A15,B14,C15,B16,B17,A17,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 1700, 1700, '2019-11-06', '07:15:00', '2019-11-06', '12:50:00', 'A15,B14,C15,B16,B17,A17,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 1700, 1700, '2019-11-06', '07:15:00', '2019-11-06', '12:50:00', 'A15,B14,C15,B16,B17,A17,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 1700, 1700, '2019-11-06', '07:16:00', '2019-11-06', '12:50:00', 'A15,B14,C15,B16,B17,A17,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 1700, 1700, '2019-11-06', '07:17:00', '2019-11-06', '12:50:00', 'A15,B14,C15,B16,B17,A17,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 1700, 1700, '2019-11-06', '07:18:00', '2019-11-06', '12:50:00', 'A15,B14,C15,B16,B17,A17,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 1700, 1700, '2019-11-06', '07:18:00', '2019-11-06', '12:50:00', 'A15,B14,C15,B16,B17,A17,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 1700, 1700, '2019-11-06', '07:18:00', '2019-11-06', '12:50:00', 'A15,B14,C15,B16,B17,A17,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 1700, 1700, '2019-11-06', '07:20:00', '2019-11-06', '12:50:00', 'A15,B14,C15,B16,B17,A17,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 1700, 1700, '2019-11-06', '07:21:00', '2019-11-06', '12:50:00', 'A15,B14,C15,B16,B17,A17,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 800, 800, '2019-11-06', '07:23:00', '2019-11-06', '10:15:00', 'A11,A9,A12,A8,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 1300, 1300, '2019-11-06', '07:26:00', '2019-11-06', '10:15:00', 'A14,A15,A16,B14,C15,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 1300, 1300, '2019-11-06', '07:27:00', '2019-11-06', '10:15:00', 'A14,A15,A16,B14,C15,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 600, 600, '2019-11-06', '07:42:00', '2019-11-06', '10:15:00', 'B9,B12,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 600, 600, '2019-11-06', '07:42:00', '2019-11-06', '10:15:00', 'B9,B12,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 600, 600, '2019-11-06', '07:43:00', '2019-11-06', '10:15:00', 'B9,B12,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 600, 600, '2019-11-06', '07:44:00', '2019-11-06', '10:15:00', 'B9,B12,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 600, 600, '2019-11-06', '07:45:00', '2019-11-06', '10:15:00', 'B9,B12,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 600, 600, '2019-11-06', '07:46:00', '2019-11-06', '10:15:00', 'B9,B12,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 600, 600, '2019-11-06', '07:47:00', '2019-11-06', '10:15:00', 'B9,B12,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 600, 600, '2019-11-06', '07:48:00', '2019-11-06', '10:15:00', 'B9,B12,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 600, 600, '2019-11-06', '07:48:00', '2019-11-06', '10:15:00', 'B9,B12,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 600, 600, '2019-11-06', '07:48:00', '2019-11-06', '10:15:00', 'B9,B12,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 600, 600, '2019-11-06', '07:49:00', '2019-11-06', '10:15:00', 'B9,B12,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 600, 600, '2019-11-06', '07:49:00', '2019-11-06', '10:15:00', 'B9,B12,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 600, 600, '2019-11-06', '07:49:00', '2019-11-06', '10:15:00', 'B9,B12,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 600, 600, '2019-11-06', '07:53:00', '2019-11-06', '10:15:00', 'B9,B12,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 600, 600, '2019-11-06', '07:54:00', '2019-11-06', '10:15:00', 'B9,B12,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 600, 600, '2019-11-06', '07:54:00', '2019-11-06', '10:15:00', 'B9,B12,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 600, 600, '2019-11-06', '07:55:00', '2019-11-06', '10:15:00', 'B9,B12,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 600, 600, '2019-11-06', '08:00:00', '2019-11-06', '10:15:00', 'B9,B12,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 600, 600, '2019-11-06', '08:03:00', '2019-11-06', '10:15:00', 'B9,B12,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 600, 600, '2019-11-06', '08:04:00', '2019-11-06', '10:15:00', 'B9,B12,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 600, 600, '2019-11-06', '08:10:00', '2019-11-06', '10:15:00', 'B9,B12,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 600, 600, '2019-11-06', '08:12:00', '2019-11-06', '10:15:00', 'B9,B12,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 600, 600, '2019-11-06', '08:13:00', '2019-11-06', '10:15:00', 'B9,B12,'),
-('PixelSpades', '  PVR PACIFIC', '  CHICHHCHORE ', 600, 600, '2019-11-06', '08:18:00', '2019-11-06', '10:15:00', 'B9,B12,'),
-('PixelSpades', ' PVR PACIFIC', 'CHICHHCHORE', 1000, 1000, '2019-11-06', '08:19:00', '2019-11-06', '10:15:00', 'B15,B16,C10,'),
-('PixelSpades', ' PVR PACIFIC', 'CHICHHCHORE', 1000, 1000, '2019-11-06', '08:20:00', '2019-11-06', '10:15:00', 'B15,B16,C10,'),
-('PixelSpades', ' PVR PACIFIC', 'CHICHHCHORE', 1000, 1000, '2019-11-06', '08:21:00', '2019-11-06', '10:15:00', 'B15,B16,C10,'),
-('PixelSpades', ' PVR PACIFIC', 'CHICHHCHORE', 1000, 1000, '2019-11-06', '08:23:00', '2019-11-06', '10:15:00', 'B15,B16,C10,'),
-('PixelSpades', ' PVR PACIFIC', 'CHICHHCHORE', 1000, 1000, '2019-11-06', '08:23:00', '2019-11-06', '10:15:00', 'B15,B16,C10,'),
-('PixelSpades', ' PVR PACIFIC', 'CHICHHCHORE', 1000, 1000, '2019-11-06', '08:23:00', '2019-11-06', '10:15:00', 'B15,B16,C10,'),
-('PixelSpades', ' PVR PACIFIC', 'CHICHHCHORE', 1000, 1000, '2019-11-06', '08:24:00', '2019-11-06', '10:15:00', 'B15,B16,C10,'),
-('PixelSpades', ' PVR PACIFIC', 'CHICHHCHORE', 1000, 1000, '2019-11-06', '08:26:00', '2019-11-06', '10:15:00', 'B15,B16,C10,');
+('PixelSpades', ' PVR PACIFIC', 'CHICHHCHORE', 400, '6827122023', '2019-11-06', '09:44:00', '2019-11-06', '12:50:00', 'A7,A12,'),
+('PixelSpades', ' PVR PACIFIC', 'CHICHHCHORE', 400, '8931942761', '2019-11-06', '09:46:00', '2019-11-06', '12:50:00', 'A7,A12,'),
+('PixelSpades', ' PVR PACIFIC', 'CHICHHCHORE', 400, '7001358678', '2019-11-06', '09:47:00', '2019-11-06', '12:50:00', 'A7,A12,'),
+('PixelSpades', ' PVR PACIFIC', 'CHICHHCHORE', 600, '10144383343', '2019-11-06', '09:18:00', '2019-11-06', '10:15:00', 'A6,C9,'),
+('PixelSpades', ' PVR PACIFIC', 'CHICHHCHORE', 700, '8768171778', '2019-11-06', '09:23:00', '2019-11-06', '10:15:00', 'C8,B17,'),
+('PixelSpades', ' PVR PACIFIC', 'CHICHHCHORE', 900, '1220270704', '2019-11-09', '15:01:00', '2019-11-12', '10:15:00', 'B3,A17,C17,'),
+('PixelSpades', ' PVR PACIFIC', 'CHICHHCHORE', 900, '2663351360', '2019-11-09', '15:03:00', '2019-11-12', '10:15:00', 'B3,A17,C17,'),
+('PixelSpades', ' PVR PACIFIC', 'CHICHHCHORE', 900, '9566827196', '2019-11-09', '15:04:00', '2019-11-12', '10:15:00', 'B3,A17,C17,');
 
 -- --------------------------------------------------------
 
@@ -208,8 +145,8 @@ CREATE TABLE `time_slots` (
 --
 
 INSERT INTO `time_slots` (`slot_id`, `timing`, `seat_booked`) VALUES
-(1, '10:15', 'A1,A4,A5,A13,A10,B13,C11,A11,A9,A12,A8,A14,A15,A16,B14,C15,B9,B12,B15,B16,C10'),
-(1, '12:50', 'A5,A4,A9,B13,C10,A15,B14,C15,B16,B17,A17'),
+(1, '10:15', 'A1,A4,A5,A13,A10,B13,C11,A11,A9,A12,A8,A14,A15,A16,B14,C15,B9,B12,B15,B16,C10,B5,B7,C12,B11,A7,B8,A6,C9,C8,B17,B3,A17,C17'),
+(1, '12:50', 'A5,A4,A9,B13,C10,A15,B14,C15,B16,B17,A17,A7,A12'),
 (2, '16:50', 'A5,A4');
 
 -- --------------------------------------------------------
@@ -268,7 +205,7 @@ ALTER TABLE `theatre`
 -- Indexes for table `ticket`
 --
 ALTER TABLE `ticket`
-  ADD KEY `ticket_ibfk_3` (`username`);
+  ADD PRIMARY KEY (`username`,`theatre_name`,`movie_name`,`move_price`,`booking_date`,`booking_time`,`show_date`,`show_time`,`seats_booked`) USING BTREE;
 
 --
 -- Indexes for table `time_slots`

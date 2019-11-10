@@ -10,7 +10,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -21,6 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Random;
 /**
  *
  * @author Nitesh Kr
@@ -60,6 +60,17 @@ public class generateTicket extends HttpServlet {
        pw.print("date is "+curr_date +"time is "+curr_time+"reserved is"+seats_reserved+"movie_name is "+movie_name);
        
        
+       Random random=new Random();
+       long start=1000000000L;
+       long range=9999999999L;
+       long fraction=(long) (range*(random.nextDouble()));
+       long number=fraction+start;
+       
+       
+       
+       
+       
+       
        
        Connection con=ConnectDB.getConnectDB();
        PreparedStatement ps=con.prepareStatement("insert into ticket values(?,?,?,?,?,?,?,?,?,?)");
@@ -67,7 +78,7 @@ public class generateTicket extends HttpServlet {
        ps.setString(2, theatre_name);
        ps.setString(3, movie_name);
        ps.setString(4, amount);
-       ps.setString(5, amount);
+       ps.setString(5, Long.toString(number));
        ps.setString(6, curr_date);
        ps.setString(7, curr_time);
        ps.setString(8, date);
@@ -80,8 +91,8 @@ public class generateTicket extends HttpServlet {
        ps.setString(3, slot);
        ps.executeUpdate();
        out.print("SELECT movie_primary  from movie where movie_name like %"+movie_name+"");
-       PreparedStatement ts=con.prepareStatement("SELECT movie_primary  from movie where movie_name like ?");
-       ts.setString(1,"%"+movie_name+"%");
+       PreparedStatement ts=con.prepareStatement("SELECT movie_primary  from movie where movie_name =?");
+       ts.setString(1,movie_name);
        ResultSet rs=ts.executeQuery();
        
        while(rs.next())
@@ -90,7 +101,8 @@ public class generateTicket extends HttpServlet {
        
        
        }
-       request.getRequestDispatcher("generateTicket.jsp").forward(request, response);
+       request.setAttribute("booking_id",Long.toString(number));
+       request.getRequestDispatcher("generateTicket.jsp?s=1").forward(request, response);
 
        
        

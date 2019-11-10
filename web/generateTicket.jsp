@@ -13,7 +13,6 @@
         <link rel="stylesheet" href="css/ticket.css">
     </head>
     <body>
-      
 
 <div class="ticket">
     <div class="holes-top"></div>
@@ -27,13 +26,13 @@
     <div class="info">
         <table>
             <tr>
-                <th>SCREEN</th>
-                <th>ROW</th>
+                <th>BOOKING NO.</th>
+                
                 <th>SEAT</th>
             </tr>
             <tr>
-                <td class="bigger"><%= request.getParameter("screen_id") %></td>
-                <td class="bigger"><%= request.getParameter("screen_id") %></td>
+                <td class="bigger"><%= request.getAttribute("booking_id") %></td>
+               
                 <td class="bigger"><%= request.getParameter("client_seats") %></td>
             </tr>
         </table>

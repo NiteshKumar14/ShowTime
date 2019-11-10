@@ -13,7 +13,13 @@
            <link rel="stylesheet" href="css/payment.css">
     </head>
     <body>
+    <%
+          response.setHeader("Cache-Control", "no-cache , no-store,revalidate");
+             response.setHeader("Pragma", "no-cache");
+             response.setHeader("Expires", "0");
     
+    
+    %>
 <div class="container">
     <div class="price">
         <h1>Awesome, that's ₹<%= request.getParameter("amount")%> !</h1>
