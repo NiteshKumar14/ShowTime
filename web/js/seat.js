@@ -17,11 +17,13 @@ $(document).ready(function() {
     alert("length is" + length1);
     alert(array1[0]);
     var i;
+    
     for (i = 0; i < array1.length; i++) {
         let set = document.getElementById(array1[i].toString());
-       
+        try{
         set.disabled = true;
-
+        }
+        catch(err){}
 
 
     }

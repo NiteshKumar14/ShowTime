@@ -73,7 +73,7 @@ public class generateTicket extends HttpServlet {
        
        
        Connection con=ConnectDB.getConnectDB();
-       PreparedStatement ps=con.prepareStatement("insert into ticket values(?,?,?,?,?,?,?,?,?,?)");
+       PreparedStatement ps=con.prepareStatement("insert into ticket values(?,?,?,?,?,?,?,?,?,?,?)");
        ps.setString(1, (String) session.getAttribute("id"));
        ps.setString(2, theatre_name);
        ps.setString(3, movie_name);
@@ -84,6 +84,7 @@ public class generateTicket extends HttpServlet {
        ps.setString(8, date);
        ps.setString(9, timing);
        ps.setString(10, client_seats);
+       ps.setString(11, slot);
        ps.executeUpdate();
        ps=con.prepareStatement("Update time_slots set seat_booked=? where timing=? and slot_id=?");
        ps.setString(1, seats_reserved);

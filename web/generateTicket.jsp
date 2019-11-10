@@ -17,7 +17,8 @@
 <div class="ticket">
     <div class="holes-top"></div>
     <div class="title">
-        <p class="cinema"><%= request.getParameter("theatre_name") %></p>
+        <p class="cinema"><%= request.getParameter("theatre_name") %>(Screen No.<%= request.getParameter("screen_id")    %>)</p>
+        
         <p class="movie-title"><%=  request.getParameter("movie_name") %></p>
     </div>
     <div class="poster">
