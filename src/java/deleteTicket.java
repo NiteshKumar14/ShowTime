@@ -80,7 +80,7 @@ public class deleteTicket extends HttpServlet {
         if (AS.length > 0) {
             StringBuilder sb = new StringBuilder();
             for (String s : AS) {
-                if(!"".equals(s)) {
+                if("".equals(s)) {
                 } else {
                     sb.append(s).append(",");
                 }
@@ -88,8 +88,14 @@ public class deleteTicket extends HttpServlet {
             result = sb.deleteCharAt(sb.length() - 1).toString();
         }
         
+        PreparedStatement p2 = con.prepareStatement("UPDATE time_slot set seat_booked=? where slot_id=? and timing=? ");
+        ps.setString(1, result);
+        ps.setString(2, slot_id);
+        ps.setString(3, show_time);
         
+        ps.executeUpdate();
         
+        PreparedStatement p3 = con.prepareStatement("Delete from table where ");
 //        List<String> ASS = new ArrayList<>();
 //        ASS = Arrays.asList(AS);
 

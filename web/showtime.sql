@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 10, 2019 at 06:11 AM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.2
+-- Generation Time: Nov 11, 2019 at 10:47 AM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.3.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -72,7 +72,7 @@ CREATE TABLE `reservation` (
 --
 
 INSERT INTO `reservation` (`theatre_name`, `movie_name`, `slot_id`, `date`, `screen_id`) VALUES
-('PVR PACIFIC', 'CHICHHCHORE', 1, '2019-11-12', 2),
+('PVR PACIFIC', 'CHICHHCHORE', 1, '2019-11-11', 2),
 ('PVR VIKASPURI', 'CHICHHCHORE', 2, '2019-11-13', 2);
 
 -- --------------------------------------------------------
@@ -110,23 +110,20 @@ CREATE TABLE `ticket` (
   `booking_date` date NOT NULL,
   `booking_time` time NOT NULL,
   `show_date` date NOT NULL,
-  `show_time` time NOT NULL,
-  `seats_booked` varchar(40) NOT NULL
+  `show_time` varchar(10) NOT NULL,
+  `seats_booked` varchar(40) NOT NULL,
+  `slot_id` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `ticket`
 --
 
-INSERT INTO `ticket` (`username`, `theatre_name`, `movie_name`, `move_price`, `booking_id`, `booking_date`, `booking_time`, `show_date`, `show_time`, `seats_booked`) VALUES
-('PixelSpades', ' PVR PACIFIC', 'CHICHHCHORE', 400, '6827122023', '2019-11-06', '09:44:00', '2019-11-06', '12:50:00', 'A7,A12,'),
-('PixelSpades', ' PVR PACIFIC', 'CHICHHCHORE', 400, '8931942761', '2019-11-06', '09:46:00', '2019-11-06', '12:50:00', 'A7,A12,'),
-('PixelSpades', ' PVR PACIFIC', 'CHICHHCHORE', 400, '7001358678', '2019-11-06', '09:47:00', '2019-11-06', '12:50:00', 'A7,A12,'),
-('PixelSpades', ' PVR PACIFIC', 'CHICHHCHORE', 600, '10144383343', '2019-11-06', '09:18:00', '2019-11-06', '10:15:00', 'A6,C9,'),
-('PixelSpades', ' PVR PACIFIC', 'CHICHHCHORE', 700, '8768171778', '2019-11-06', '09:23:00', '2019-11-06', '10:15:00', 'C8,B17,'),
-('PixelSpades', ' PVR PACIFIC', 'CHICHHCHORE', 900, '1220270704', '2019-11-09', '15:01:00', '2019-11-12', '10:15:00', 'B3,A17,C17,'),
-('PixelSpades', ' PVR PACIFIC', 'CHICHHCHORE', 900, '2663351360', '2019-11-09', '15:03:00', '2019-11-12', '10:15:00', 'B3,A17,C17,'),
-('PixelSpades', ' PVR PACIFIC', 'CHICHHCHORE', 900, '9566827196', '2019-11-09', '15:04:00', '2019-11-12', '10:15:00', 'B3,A17,C17,');
+INSERT INTO `ticket` (`username`, `theatre_name`, `movie_name`, `move_price`, `booking_id`, `booking_date`, `booking_time`, `show_date`, `show_time`, `seats_booked`, `slot_id`) VALUES
+('t_verma', ' PVR PACIFIC', 'CHICHHCHORE', 300, '6112257022', '2019-11-11', '02:02:00', '2019-11-11', '10:15', 'B7,', 1),
+('t_verma', ' PVR PACIFIC', 'CHICHHCHORE', 500, '7943851611', '2019-11-10', '22:44:00', '2019-11-10', '10:15', 'B8,A1,', 1),
+('t_verma', ' PVR PACIFIC', 'CHICHHCHORE', 600, '8329818428', '2019-11-11', '13:49:00', '2019-11-11', '12:50', 'A2,C14,', 1),
+('t_verma', ' PVR PACIFIC', 'CHICHHCHORE', 900, '1755008929', '2019-11-11', '02:02:00', '2019-11-11', '10:15', 'B11,A13,C13,', 1);
 
 -- --------------------------------------------------------
 
@@ -145,8 +142,8 @@ CREATE TABLE `time_slots` (
 --
 
 INSERT INTO `time_slots` (`slot_id`, `timing`, `seat_booked`) VALUES
-(1, '10:15', 'A1,A4,A5,A13,A10,B13,C11,A11,A9,A12,A8,A14,A15,A16,B14,C15,B9,B12,B15,B16,C10,B5,B7,C12,B11,A7,B8,A6,C9,C8,B17,B3,A17,C17'),
-(1, '12:50', 'A5,A4,A9,B13,C10,A15,B14,C15,B16,B17,A17,A7,A12'),
+(1, '10:15', ',B8,A1,B11,A13,C13,B7'),
+(1, '12:50', ',A2,C14'),
 (2, '16:50', 'A5,A4');
 
 -- --------------------------------------------------------
@@ -173,7 +170,8 @@ INSERT INTO `user` (`username`, `name`, `password`, `role`) VALUES
 ('Knight@gmail.com', 'Nitesh', 'hellobaby', 'user'),
 ('PixelSpades', 'Colonel Belvile', 'Random@!1', 'user'),
 ('ranveer11', 'Ranveer', 'Ranveer@1', 'user'),
-('tarun@gmail.com', 'Tarun', 'belvile', 'user');
+('tarun@gmail.com', 'Tarun', 'belvile', 'user'),
+('t_verma', 'Tarun Verma', 'Tarun@123', 'user');
 
 --
 -- Indexes for dumped tables
