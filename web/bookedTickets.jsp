@@ -29,7 +29,7 @@
             }
             .table-wrapper {
                 background: #fff;
-                padding: 20px 25px;
+                padding: 18px 20px;
                 margin: 30px auto;
                 border-radius: 3px;
                 box-shadow: 0 1px 1px rgba(0,0,0,.05);
@@ -125,7 +125,7 @@
             }	
             table.table tr th, table.table tr td {
                 border-color: #e9e9e9;
-                padding: 12px 15px;
+                padding: 10px 18px;
                 vertical-align: middle;
             }
             table.table tr th:first-child {
@@ -226,7 +226,10 @@
                 float: left;
                 margin-top: 10px;
                 font-size: 13px;
-            }    
+            }  
+            .yf{
+                padding: 10px;
+            }
         </style>
         <script type="text/javascript">
             $(document).ready(function () {
@@ -234,9 +237,22 @@
             });
         </script>
 
-
+        <script defer>
+            function submitForm(action)
+            {   alert("submitForm");
+                document.getElementById('columnForm').action = action;
+                document.getElementById('columnForm').submit();
+            }
+        </script>
     </head>
+    <%
+        if (request.getParameter("d") != null) {
+    %>
+    <script>
+        alert("cancelled sucessfully");
 
+    </script>
+    <%  }%>
     <body>
         <%
 
@@ -263,7 +279,7 @@
                         </div>
                     </div>
                 </div>
-
+                
 
                 <table class="table table-striped table-hover">
                     <thead>
@@ -274,45 +290,48 @@
                             <th>Date</th>						
                             <th>Seats</th>						
                             <th>Amount</th>
-                            <th>Action</th>
+                           <th>Action</th>
                         </tr>
-                        
+
                     </thead>
                 </table>
-                    <%  Driver driver = (Driver) Class.forName("com.mysql.jdbc.Driver").newInstance();
-                        DriverManager.registerDriver(driver);
-                        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/showtime", "root", "");
-                        PreparedStatement st = con.prepareStatement("SELECT * FROM ticket where username=?");
-                        st.setString(1, session.getAttribute("id").toString());
-                        ResultSet rs = st.executeQuery();
-                        int count = 1;
-                        int flag = 0;
-                        while (rs.next()) {
+                <%  Driver driver = (Driver) Class.forName("com.mysql.jdbc.Driver").newInstance();
+                    DriverManager.registerDriver(driver);
+                    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/showtime", "root", "");
+                    PreparedStatement st = con.prepareStatement("SELECT * FROM ticket where username=?");
+                    st.setString(1, session.getAttribute("id").toString());
+                    ResultSet rs = st.executeQuery();
+                    int count = 1;
+                    int flag = 0;
+                    while (rs.next()) {
 
-                    %>
-                    
-                    <form action="deleteTicket" method="post">
+                %>
+
+                <form id="columnForm" action="deleteTicket" method="post">
                     <table class="table table-striped table-hover">
-                    
-                        
-                    <tbody>
 
-                        <tr>
-                            <td><%=count%></td>
-                            <td><input type="hidden" value="<%=rs.getString(3)%>" name="movie_name"><%=rs.getString(3)%></td>
-                            <td><input type="hidden" value="<%=rs.getString(2)%>" name="theatre_name"><%=rs.getString(2)%></td>
-                            <td><input type="hidden" value="<%=rs.getString(6)%>" name="booking_date"><%=rs.getString(6)%></td>   
-                            <td><input type="hidden" value="<%=rs.getString(10)%>" name="seats_booked"><%=rs.getString(10)%></td>
-                            <td> <input type="hidden" value="<%=rs.getString(3)%>" name="movie_price"><%=rs.getString(4)%></td>                            
-                            <td>
-                                <input type="hidden" value="<%=rs.getString("slot_id")%>" name="slot_id">
-                                <input type="hidden" value="<%=rs.getString("show_time")%>" name="show_time">
-                                <button onclick="">View</button>
-                                <button onclick="">Cancel</button>
-                            </td>
+
+                        <tbody>
+
+                            <tr>
+                                <td><%=count%></td>
+                                <td><input type="hidden" value="<%=rs.getString(3)%>" name="movie_name"><%=rs.getString(3)%></td>
+                                <td><input type="hidden" value="<%=rs.getString(2)%>" name="theatre_name"><%=rs.getString(2)%></td>
+                                <td><input type="hidden" value="<%=rs.getString(6)%>" name="booking_date"><%=rs.getString(6)%></td>   
+                                <td><input type="hidden" value="<%=rs.getString(10)%>" name="seats_booked"><%=rs.getString(10)%></td>
+                                <td> <input type="hidden" value="<%=rs.getString(3)%>" name="movie_price"><%=rs.getString(4)%></td>                            
+
+                        <input type="hidden" value="<%=rs.getString("slot_id")%>" name="slot_id">
+                        <input type="hidden" value="<%=rs.getString("show_time")%>" name="show_time">
+                     
+                    
+                        <td ><center> <button  name="cancel" type="submit">Cancel</button></center>
+                        </td>
+                        
+                        </td>
                         </tr>
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
                 </form>          
                 <% count++;
                     }

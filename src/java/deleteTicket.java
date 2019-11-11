@@ -58,11 +58,18 @@ public class deleteTicket extends HttpServlet {
         String actual_seats = "";
         while (rs.next()) {
             actual_seats = rs.getString("seat_booked");
-            out.print("\n  acc   " + actual_seats);
+         //   out.print("\n  acc   " + actual_seats);
 
         }
-        out.print("<br>");
+        //out.print("<br>");
+        
         String AS[] = actual_seats.split(",");
+        //out.print("as");
+        //for (int i = 0; i < AS.length; i++) {
+         //   out.print( ""+AS[i]);
+            
+        //}
+        
         
         for (int i = 0; i < AS.length; i++) {
             for (int j = 0; j < S.length; j++) {
@@ -74,10 +81,8 @@ public class deleteTicket extends HttpServlet {
             
         }
         
-        String AS2[]={};
-        
         String result = "";
-        if (AS.length > 0) {
+        if (AS.length > 0 && (AS.length!=S.length) ) {
             StringBuilder sb = new StringBuilder();
             for (String s : AS) {
                 if("".equals(s)) {
@@ -85,57 +90,24 @@ public class deleteTicket extends HttpServlet {
                     sb.append(s).append(",");
                 }
             }
-            result = sb.deleteCharAt(sb.length() - 1).toString();
+            result = sb.toString();
         }
+        //out.print("result"+result);
         
-        PreparedStatement p2 = con.prepareStatement("UPDATE time_slot set seat_booked=? where slot_id=? and timing=? ");
-        ps.setString(1, result);
-        ps.setString(2, slot_id);
-        ps.setString(3, show_time);
+        PreparedStatement p2 = con.prepareStatement("UPDATE time_slots set seat_booked=? where slot_id=? and timing=? ");
+        p2.setString(1, result);
+        p2.setString(2, slot_id);
+        p2.setString(3, show_time);
         
-        ps.executeUpdate();
+        p2.executeUpdate();
         
-        PreparedStatement p3 = con.prepareStatement("Delete from table where ");
-//        List<String> ASS = new ArrayList<>();
-//        ASS = Arrays.asList(AS);
+        PreparedStatement p3 = con.prepareStatement("Delete from ticket where seats_booked=? and slot_id=? ");
+        p3.setString(1, seats_booked);
+        p3.setString(2, slot_id);
+        
+        p3.executeUpdate();
+        response.setHeader("refresh","1;url=bookedTickets.jsp?d=1");
 
-//        ASS.removeAll(SS);
-
-//        String str[] = new String[ASS.size()];
-//        for (int j = 0; j < ASS.size(); j++) {
-//
-//            str[j] = ASS.get(j);
-//        }
-//        
-//        out.print("SS");
-//        for (String str1 : str) {
-//            out.print(str1);
-//        }
-//        String result = "";
-//        if (str.length > 0) {
-//            StringBuilder sb = new StringBuilder();
-//            for (String s : str) {
-//                sb.append(s).append(",");
-//            }
-//            result = sb.deleteCharAt(sb.length() - 1).toString();
-//        }
-
-//            out.print(result);
-//        for(int i=0;i<S.length;++i)
-//        {
-//            for(int j=0;j<AS.length;++i){
-//                if(S[i].equalsIgnoreCase(AS[j])){
-//                    AS[j] = "";
-//                }
-//            }
-//        }
-//        
-//        for (int i = 0; i < AS.length; i++) {
-//            SS+=AS[i]+",";
-//            out.print("\n AS:: "+AS[i]);
-//        }
-//        
-//        out.print("\nSS ::   "+SS);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

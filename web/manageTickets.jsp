@@ -18,69 +18,63 @@
         <link rel="stylesheet" href="css/table.css">
     </head>
     <body>
-          <form name="Admin" action="logout" method="POST">
-            <input type="submit" value="Logout" >
-        </form>
-    
-                <div class="container">
-        <table >
-            <thead>
-            <tr>
-                <th >Booking Id</th>
-                <th >User Name</th>
-                <th >Movie Name</th>
-                <th >Theatre Name</th>
-                <th >Show Date </th>
-                <th >Show Time </th>
-                <th>   Price   </th>
-                
-    
-                <th>Action</th>
-                
-            </tr>
-            </thead>
-        </table>
-        <%
-            Driver driver=(Driver)(Class.forName("com.mysql.jdbc.Driver")).newInstance();
-            DriverManager.registerDriver(driver);
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/showtime","root", "");
-            PreparedStatement stmt = con.prepareStatement("select *from ticket");
-            ResultSet rs = stmt.executeQuery();
-            while(rs.next())
-            {
-            %>
-            <form action="cancel" method="post">
-            <table>
-            <tr>
-                <td  ><%=rs.getString("booking_id")%></td>
-            <input type="hidden" value="<%=rs.getString("booking_id")%>" name="booking_id">
-                <td><%=rs.getString("username")%></td> 
-                <td><%=rs.getString("movie_name")%></td>
-                <td><%=rs.getString("theatre_name")%></td>
-                <td><%=rs.getString("show_date")%></td>
-                <td><%=rs.getString("Show_time")%></td>
-                <td><%=rs.getString("ticket_price")%></td>
-            
-                <td>
-           
-            <input type="submit" value="edit" class="bttn" >
         
-                </td>
-            <td>
-           
-            <input type="submit" value="Cancel"  class="bttn1" >    
-            
-                </td>
-            </tr>
-            </table>
-            </form>
-                <%
-              }  
-            %>
-                     </div>
-        
-        
-        
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>User<th>
+                            <th>Movie</th>
+                            <th>Theater</th>
+                            <th>Date</th>						
+                            <th>Seats</th>						
+                            <th>Amount</th>
+                           <th>Action</th>
+                        </tr>
+
+                    </thead>
+                </table>
+                <%  Driver driver = (Driver) Class.forName("com.mysql.jdbc.Driver").newInstance();
+                    DriverManager.registerDriver(driver);
+                    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/showtime", "root", "");
+                    PreparedStatement st = con.prepareStatement("SELECT * FROM ticket");
+                    ResultSet rs = st.executeQuery();
+                    int count = 1;
+                    while (rs.next()) {
+
+                %>
+
+                <form id="columnForm" action="deleteTicket" method="post">
+                    <table class="table table-striped table-hover">
+
+
+                        <tbody>
+
+                            <tr>
+                                <td><%=count%></td>
+                                <td><%=rs.getString(1)%></td>
+                                <td><input type="hidden" value="<%=rs.getString(3)%>" name="movie_name"><%=rs.getString(3)%></td>
+                                <td><input type="hidden" value="<%=rs.getString(2)%>" name="theatre_name"><%=rs.getString(2)%></td>
+                                <td><input type="hidden" value="<%=rs.getString(6)%>" name="booking_date"><%=rs.getString(6)%></td>   
+                                <td><input type="hidden" value="<%=rs.getString(10)%>" name="seats_booked"><%=rs.getString(10)%></td>
+                                <td> <input type="hidden" value="<%=rs.getString(3)%>" name="movie_price"><%=rs.getString(4)%></td>                            
+
+                        <input type="hidden" value="<%=rs.getString("slot_id")%>" name="slot_id">
+                        <input type="hidden" value="<%=rs.getString("show_time")%>" name="show_time">
+                     
+                    
+                        <td ><center> <button  name="cancel" type="submit">Cancel</button></center>
+                        </td>
+                        
+                        </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </form>          
+                <% count++;
+                    }
+
+                %>
         
     </body>
 </html>
