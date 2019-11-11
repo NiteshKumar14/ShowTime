@@ -44,7 +44,7 @@
 
                 %>
 
-                <form id="columnForm" action="deleteTicket" method="post">
+                <form id="columnForm" action="adminDelete" method="post">
                     <table class="table table-striped table-hover">
 
 
