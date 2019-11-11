@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 11, 2019 at 10:47 AM
+-- Generation Time: Nov 11, 2019 at 05:44 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -49,7 +49,7 @@ INSERT INTO `movie` (`movie_id`, `movie_name`, `move_price`, `movie_genre`, `mov
 ('M001', 'CHICHHCHORE', 245, 'COMEDY', '120 min', 'Nitesh Tiwari', 'The setup was within 1990\'s till present where Anni, a divorcee used his past experience in overcoming challenges of being a loser in college where he met His Wife, Maya and his Losers friends, Saxa, Mummy, Acid, Derek and Bevda.', 'images/chhi_s.jpg', 'images/chhi_s.jpg', 'fadee'),
 ('M002', 'DREAM GIRL', 250, 'ROMANCE , COMEDY', '126', 'Raaj Shaandilyaa', 'Rom-com Movie, directed by Raaj Shaandilyaa, stars Ayushmann Khurrana who plays a \'dream girl\'. In every love story, there is always one trying to win the heart of the other, who could be the \'dream girl\'.', 'images/dream_s.jpg', 'images/dream_s.jpg', 'jsdhj'),
 ('M003', 'BATLA HOUSE', 300, 'Action', '120 min', ' Nikkhil Advani', 'This action thriller is based on the real-life incident of \'Batla House Encounter\', officially known as Operation Batla House, to the silver screen.', 'images/batla_s.JPG', 'images/Batla.jpg', 'batlaa'),
-('M004', 'End Game', 245, ' Action, Adventure, Drama', '181 min', 'Anthony Russo, Joe Russo', 'After the devastating events of Avengers: Infinity War (2018), the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos\'s actions and undo the chaos to the universe', 'images/end_s.jpg', 'images/end.jpg', 'end'),
+('M004', 'End Game', 245, ' Action, Adventure, Drama', '181 min', 'Anthony Russo', 'After the devastating events of Avengers: Infinity War (2018), the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos\'s actions and undo the chaos to the universe', 'images/end_s.jpg', 'images/end.jpg', 'end'),
 ('M005', 'Bala', 300, 'Comedy', '120 min', ' Amar Kaushik', 'The film focuses on a young man Gaurav Rawat aka Bala (Ayushmann Khurrana) plagued with premature baldness and the way he copes with the situation. Revolving around his everyday struggle due to hair loss.', 'images/bala_s.jpg', 'images/bala.jpg', 'bala'),
 ('M006', 'Housefull 4', 200, ' Action, Comedy, Fantasy ', '145 min', 'Farhad Samji', 'In 1419 Sitamgarh, 3 couples are parted away due to an evil conspiracy. 600 hundred years later in 2019 in London, the couples\'s reincarnations meet again but this time each one of them is marrying the wrong person.', 'images/h4_s.jpg', 'images/h4.jpg', 'h4');
 
@@ -72,8 +72,13 @@ CREATE TABLE `reservation` (
 --
 
 INSERT INTO `reservation` (`theatre_name`, `movie_name`, `slot_id`, `date`, `screen_id`) VALUES
-('PVR PACIFIC', 'CHICHHCHORE', 1, '2019-11-11', 2),
-('PVR VIKASPURI', 'CHICHHCHORE', 2, '2019-11-13', 2);
+('PVR PACIFIC', 'CHICHHCHORE', 1, '2019-11-13', 2),
+('PVR VIKASPURI', 'CHICHHCHORE', 2, '2019-11-13', 2),
+('INOX JANAKPURI', 'DREAM GIRL', 3, '2019-11-13', 1),
+('INOX JANAKPURI', 'BATLA HOUSE', 4, '2019-11-13', 4),
+('PVR VIKASPURI', 'End Game', 5, '2019-11-13', 3),
+('PVR PACIFIC', 'Housefull 4', 6, '2019-11-13', 3),
+('PVR VIKASPURI', 'Bala', 7, '2019-11-13', 2);
 
 -- --------------------------------------------------------
 
@@ -120,10 +125,9 @@ CREATE TABLE `ticket` (
 --
 
 INSERT INTO `ticket` (`username`, `theatre_name`, `movie_name`, `move_price`, `booking_id`, `booking_date`, `booking_time`, `show_date`, `show_time`, `seats_booked`, `slot_id`) VALUES
-('t_verma', ' PVR PACIFIC', 'CHICHHCHORE', 300, '6112257022', '2019-11-11', '02:02:00', '2019-11-11', '10:15', 'B7,', 1),
-('t_verma', ' PVR PACIFIC', 'CHICHHCHORE', 500, '7943851611', '2019-11-10', '22:44:00', '2019-11-10', '10:15', 'B8,A1,', 1),
-('t_verma', ' PVR PACIFIC', 'CHICHHCHORE', 600, '8329818428', '2019-11-11', '13:49:00', '2019-11-11', '12:50', 'A2,C14,', 1),
-('t_verma', ' PVR PACIFIC', 'CHICHHCHORE', 900, '1755008929', '2019-11-11', '02:02:00', '2019-11-11', '10:15', 'B11,A13,C13,', 1);
+('t_verma', ' INOX JANAKPURI', 'BATLA HOUSE ', 900, '10327844463', '2019-11-11', '22:09:00', '2019-11-13', '18:40', 'B9,A9,C10,', 4),
+('t_verma', ' INOX JANAKPURI', 'DREAM GIRL ', 1600, '9226825719', '2019-11-11', '22:07:00', '2019-11-13', '19:40', 'B3,B4,B5,B6,C4,', 3),
+('t_verma', ' PVR PACIFIC', 'CHICHHCHORE ', 1700, '10298087075', '2019-11-11', '22:03:00', '2019-11-13', '12:50', 'C2,C3,C6,B6,A6,', 1);
 
 -- --------------------------------------------------------
 
@@ -142,9 +146,16 @@ CREATE TABLE `time_slots` (
 --
 
 INSERT INTO `time_slots` (`slot_id`, `timing`, `seat_booked`) VALUES
-(1, '10:15', ',B8,A1,B11,A13,C13,B7'),
-(1, '12:50', ',A2,C14'),
-(2, '16:50', 'A5,A4');
+(1, '10:15', ''),
+(1, '12:50', ',C2,C3,C6,B6,A6'),
+(2, '16:50', ''),
+(3, '19:40', ',B3,B4,B5,B6,C4'),
+(3, '17:50', ''),
+(4, '18:40', ',B9,A9,C10'),
+(5, '20:50', ''),
+(4, '15:30', ''),
+(6, '20:50', ''),
+(7, '21:30', '');
 
 -- --------------------------------------------------------
 
