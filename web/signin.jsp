@@ -74,8 +74,8 @@
                 <% }%>
                 <!-- Login Form -->
                 <form action="Signin" method="post" id="form-signin">
-                    <input type="text" id="login" class="fadeIn second" name="username" placeholder="login" onfocus="changeCol1()" required>
-                    <input type="password" id="password" class="fadeIn third" name="password" placeholder="password" onfocus="changeCol2()" required> 
+                    <input type="text" id="login" class="fadeIn second" name="username" placeholder="Username" onfocus="changeCol1()" required>
+                    <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password" onfocus="changeCol2()" required> 
                     <input type="submit" class="fadeIn fourth" id="submit1" value="Log In" onclick="checkSignIn(event)" >
                 </form>
 

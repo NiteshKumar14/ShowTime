@@ -241,13 +241,7 @@
             });
         </script>
 
-        <script defer>
-            function submitForm(action)
-            {   alert("submitForm");
-                document.getElementById('columnForm').action = action;
-                document.getElementById('columnForm').submit();
-            }
-        </script>
+       
     </head>
     <%
         if (request.getParameter("d") != null) {

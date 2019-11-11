@@ -11,6 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Payment</title>
         <link rel="stylesheet" href="css/payment.css">
+        <script defer  src="js/paymentCheck.js"></script>
     </head>
     <body>
         <%
@@ -45,19 +46,19 @@
                     <div class="row cardholder">
                         <div class="info">
                             <label for="cardholdername">Name</label>
-                            <input placeholder="e.g. Richard Bovell" id="cardholdername" type="text" required/>
+                            <input placeholder="e.g. Richard Bovell" id="cardholdername" type="text" onfocus="resetCardholderColor()" required/>
                         </div>
                     </div>
                     <div class="row number">
                         <div class="info">
                             <label for="cardnumber">Card number</label>
-                            <input id="cardnumber" type="text" pattern="[0-9]{16,19}" maxlength="19" placeholder="8888-8888-8888-8888" required />
+                            <input id="cardnumber" type="text" pattern="[0-9]{16,19}" minlength="19" maxlength="22" placeholder="8888-8888-8888-8888" onfocus="resetCardColor()" required />
                         </div>
                     </div>
                     <div class="row details">
                         <div class="left">
                             <label for="expiry-date">Expiry</label>
-                            <select id="expiry-date"  required>
+                            <select id="expiry-month"  onfocus="resetExpiryColor()" required>
                                 <option>MM</option>
                                 <option value="1">01</option>
                                 <option value="2">02</option>
@@ -72,7 +73,7 @@
                                 <option value="12">12</option>
                             </select>
                             <span>/</span>
-                            <select id="expiry-date" required>
+                            <select id="expiry-year" onfocus="resetExpiryColor()" required>
                                 <option>YYYY</option>
                                 <option value="2019">2019</option>
                                 <option value="2020">2020</option>
@@ -90,7 +91,7 @@
                         </div>
                         <div class="right">
                             <label for="cvv">CVC/CVV</label>
-                            <input type="text" maxlength="4" placeholder="123" required/>
+                            <input type="text" maxlength="4" id="cvv" placeholder="123" onfocus="resetCvvColor()" required/>
                             <span data-balloon-length="medium" data-balloon="The 3 or 4-digit number on the back of your card." data-balloon-pos="up">i</span>
                         </div>
                     </div>
@@ -109,7 +110,7 @@
                     <input type="hidden" name="client_seats" value="<%=request.getParameter("client_seats")%>">
                     <input type="hidden" name="tt" value="<%=request.getParameter("reserved")%>">
 
-                    <button type="submit"><i class="ion-locked"></i> Confirm and Pay</button>
+                    <button type="submit" onclick="checkPayment(event)"><i class="ion-locked"></i> Confirm and Pay</button>
                 </div>
             </form>
         </div>
