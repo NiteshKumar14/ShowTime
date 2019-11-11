@@ -293,7 +293,8 @@
                     
                     <form action="deleteTicket" method="post">
                     <table class="table table-striped table-hover">
-
+                    
+                        
                     <tbody>
 
                         <tr>

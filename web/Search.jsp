@@ -74,7 +74,7 @@
             {
             %>
                 
-             
+            <form action="bookMovie.jsp" method="post">     
       <div class="movie_card" id="bright">
     <div class="info_section">
       <div class="movie_header">
@@ -94,6 +94,7 @@
         <input type="hidden" name="movie_director" value="<%=rs.getString("movie_directer")%>">
         <input type="hidden" name="movie_primary" value="<%=rs.getString("movie_primary")%>">
         <input type="hidden" name="movie_secondary" value="<%=rs.getString("movie_secondary")%>">
+          <input type="hidden" value="<%= rs.getString("movie_genre")%>" name="movie_genre">  
         
             
       </div>
@@ -110,6 +111,7 @@
             
         </div>
 </div>
+            </form>
        <%
             }
         %>

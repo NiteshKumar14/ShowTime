@@ -75,8 +75,12 @@
             Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/showtime","root", "");
             PreparedStatement stmt = con.prepareStatement("select *from movie");
             ResultSet rs = stmt.executeQuery();
+            int i=0;
             while(rs.next())
             {
+                if(i>4)
+                    break;
+                i++;
             %>
                 
            
