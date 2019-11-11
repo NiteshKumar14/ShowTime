@@ -27,6 +27,8 @@
            }
            
         %>
+        
+        
         <c:if test="${id != null}">
             <p>Welcome, ${name}</p>
         <form name="Admin" action="logout" method="POST">

@@ -34,6 +34,14 @@
 
                     </thead>
                 </table>
+        <%
+            if(request.getParameter("d")!=null)
+            {
+        %>
+        <script>
+            alert("cancelled sucessfully");
+        </script>
+        <% } %>
                 <%  Driver driver = (Driver) Class.forName("com.mysql.jdbc.Driver").newInstance();
                     DriverManager.registerDriver(driver);
                     Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/showtime", "root", "");
