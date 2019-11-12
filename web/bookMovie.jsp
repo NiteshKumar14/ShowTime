@@ -3,7 +3,7 @@
     <head>
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Sign in</title>
+        <title>Movie</title>
         <link rel="stylesheet" href="css/b2style.css">
         <script defer type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
         <link rel="stylesheet" href="css/movie_card.css">

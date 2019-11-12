@@ -30,6 +30,14 @@ function checkSignIn(e)
     
     
 }
+function show(){
+    var pwd = document.getElementById("password");
+    if (pwd.type === 'password') {
+        pwd.type = 'text';
+    } else {
+        pwd.type = 'password';
+    }
+}
 
 function changeCol1()    {document.getElementById("login").style.borderColor="#ffffff";}
 

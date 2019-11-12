@@ -6,13 +6,15 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Sign in</title>
         <link rel="stylesheet" href="css/b2style.css">
+      
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/mystyle.css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
+<!--       <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">-->
         <script defer  src="js/signInCheck.js"></script>
+
     </head>
 
     <body>
@@ -76,6 +78,15 @@
                 <form action="Signin" method="post" id="form-signin">
                     <input type="text" id="login" class="fadeIn second" name="username" placeholder="Username" onfocus="changeCol1()" required>
                     <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password" onfocus="changeCol2()" required> 
+
+                    
+                       <br>
+                        <span class="input-group-btn">
+                            <button value="eye" class="btn btn-default reveal" onclick="show()" type="button"><i class="glyphicon glyphicon-eye-open" ></i></button>
+                        </span>          
+                    
+
+
                     <input type="submit" class="fadeIn fourth" id="submit1" value="Log In" onclick="checkSignIn(event)" >
                 </form>
 
